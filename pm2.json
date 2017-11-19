@@ -1,6 +1,6 @@
 {
 	"name": "httpserver",
-	"script": "app.js",
+	"script": "./build/app.js",
 	"log_date_format": "YYYY-MM-DD HH:mm Z",
 	"error_file": "/var/log/httpserver/httpserver.stderr.log",
 	"out_file": "log/httpserver.stdout.log",
