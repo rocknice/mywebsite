@@ -1,0 +1,303 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "3.8.1",
+  "hash": "0298cd04bd7ba27e89f1",
+  "time": 2156,
+  "publicPath": "/",
+  "assetsByChunkName": {
+    "index-index": "scripts/index-index.bundle.js"
+  },
+  "assets": [
+    {
+      "name": "scripts/index-index.bundle.js",
+      "size": 3392,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "index-index"
+      ],
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "index-index": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "scripts/index-index.bundle.js"
+      ]
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 782,
+      "names": [
+        "index-index"
+      ],
+      "files": [
+        "scripts/index-index.bundle.js"
+      ],
+      "hash": "9af6158849216ebfb6d6",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+          "name": "./src/web/views/index/index-index.entry.js",
+          "index": 0,
+          "index2": 2,
+          "size": 380,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "profile": {
+            "factory": 33,
+            "building": 2051
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 0,
+          "source": "'use strict';\n\nvar _header = require('../../widget/wsyheader/header.js');\n\nvar _header2 = _interopRequireDefault(_header);\n\nvar _footer = require('../../widget/wsyfooter/footer.js');\n\nvar _footer2 = _interopRequireDefault(_footer);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n_header2.default.init();\n\n_footer2.default.init();"
+        },
+        {
+          "id": 1,
+          "identifier": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/widget/wsyheader/header.js",
+          "name": "./src/web/widget/wsyheader/header.js",
+          "index": 1,
+          "index2": 0,
+          "size": 201,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+          "issuerId": 0,
+          "issuerName": "./src/web/views/index/index-index.entry.js",
+          "profile": {
+            "factory": 5,
+            "building": 35
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+              "module": "./src/web/views/index/index-index.entry.js",
+              "moduleName": "./src/web/views/index/index-index.entry.js",
+              "type": "cjs require",
+              "userRequest": "../../widget/wsyheader/header.js",
+              "loc": "3:14-57"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n// require('header.css');\nvar Header = {\n\tinit: function init() {\n\t\tconsole.log('header');\n\t}\n};\nexports.default = Header;"
+        },
+        {
+          "id": 2,
+          "identifier": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/widget/wsyfooter/footer.js",
+          "name": "./src/web/widget/wsyfooter/footer.js",
+          "index": 2,
+          "index2": 1,
+          "size": 201,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+          "issuerId": 0,
+          "issuerName": "./src/web/views/index/index-index.entry.js",
+          "profile": {
+            "factory": 5,
+            "building": 22
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+              "module": "./src/web/views/index/index-index.entry.js",
+              "moduleName": "./src/web/views/index/index-index.entry.js",
+              "type": "cjs require",
+              "userRequest": "../../widget/wsyfooter/footer.js",
+              "loc": "7:14-57"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [],
+          "depth": 1,
+          "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n// require('footer.css');\nvar Footer = {\n\tinit: function init() {\n\t\tconsole.log('footer');\n\t}\n};\nexports.default = Footer;"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+          "moduleIdentifier": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+          "moduleName": "./src/web/views/index/index-index.entry.js",
+          "loc": "",
+          "name": "index-index",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+      "name": "./src/web/views/index/index-index.entry.js",
+      "index": 0,
+      "index2": 2,
+      "size": 380,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "profile": {
+        "factory": 33,
+        "building": 2051
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 0,
+      "source": "'use strict';\n\nvar _header = require('../../widget/wsyheader/header.js');\n\nvar _header2 = _interopRequireDefault(_header);\n\nvar _footer = require('../../widget/wsyfooter/footer.js');\n\nvar _footer2 = _interopRequireDefault(_footer);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n_header2.default.init();\n\n_footer2.default.init();"
+    },
+    {
+      "id": 1,
+      "identifier": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/widget/wsyheader/header.js",
+      "name": "./src/web/widget/wsyheader/header.js",
+      "index": 1,
+      "index2": 0,
+      "size": 201,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+      "issuerId": 0,
+      "issuerName": "./src/web/views/index/index-index.entry.js",
+      "profile": {
+        "factory": 5,
+        "building": 35
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+          "module": "./src/web/views/index/index-index.entry.js",
+          "moduleName": "./src/web/views/index/index-index.entry.js",
+          "type": "cjs require",
+          "userRequest": "../../widget/wsyheader/header.js",
+          "loc": "3:14-57"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n// require('header.css');\nvar Header = {\n\tinit: function init() {\n\t\tconsole.log('header');\n\t}\n};\nexports.default = Header;"
+    },
+    {
+      "id": 2,
+      "identifier": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/widget/wsyfooter/footer.js",
+      "name": "./src/web/widget/wsyfooter/footer.js",
+      "index": 2,
+      "index2": 1,
+      "size": 201,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+      "issuerId": 0,
+      "issuerName": "./src/web/views/index/index-index.entry.js",
+      "profile": {
+        "factory": 5,
+        "building": 22
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/yuanzai/Desktop/myframework/webframework/node_modules/babel-loader/lib/index.js??ref--0!/Users/yuanzai/Desktop/myframework/webframework/src/web/views/index/index-index.entry.js",
+          "module": "./src/web/views/index/index-index.entry.js",
+          "moduleName": "./src/web/views/index/index-index.entry.js",
+          "type": "cjs require",
+          "userRequest": "../../widget/wsyfooter/footer.js",
+          "loc": "7:14-57"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [],
+      "depth": 1,
+      "source": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\n// require('footer.css');\nvar Footer = {\n\tinit: function init() {\n\t\tconsole.log('footer');\n\t}\n};\nexports.default = Footer;"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}
