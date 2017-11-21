@@ -1,3 +1,170 @@
+<style type="text/css">
+	#main{
+			position: relative;
+			top:100px;
+			height: 100%;
+			background-color: #222;
+			overflow: hidden;
+			padding-bottom: 30px;
+		}
+		#myJD{
+			margin-top: 10px;
+			float:left;
+			width: 990px;
+			font-size: 1.6rem;
+		}
+		#myJD-side{
+			margin-left: 1000px;
+			height: 400px;
+			width: 205px;
+			border: 1px solid #444343;
+			border-radius: 20px;
+			margin-top: 14px;
+		}
+		.about-wrap,.description-wrap,.skill-wrap{
+			border: 1px solid #444343;
+		}
+		.co-wrap--style{
+			float:left;
+			border-radius: 20px;
+			margin: 14px 0px 0px 70px;
+			width: 901px;
+			overflow: hidden;
+		}
+		.about-wrap{
+			height: 400px;
+		}
+		.description-wrap{
+			height: 230px;
+		}
+		.skill-wrap{
+			height: 200px;
+		}
+		.skill-more{
+			line-height: 2.4rem; 
+		}
+		.main-front{
+			margin-top: 24px;
+			margin-left: 28px;
+			width: 5px;
+			height: 24px;
+			background-color: brown;
+			float: left;
+		}
+		.co--style{
+/*	-webkit-filter: grayscale(100%);  
+filter: grayscale(100%);*/
+/*	background: -webkit-gradient(linear,center top,center bottom,from(yellow), to(#000));*/
+overflow: hidden; 
+white-space: nowrap; 
+text-overflow: clip;
+font-size: 2.0rem;
+margin-top: 22px;
+margin-left: 45px;
+animation: comout 4s linear 1;
+width: 400px;
+}
+@keyframes comout{
+	0%{
+		width: 0;
+	}
+	100%{
+		width: 400px;
+	}
+}
+.co-more--style{
+	margin-top: 15px;
+	margin-left: 25px;
+	width: 840px;
+}
+.about-more1{
+	float: left;
+	margin-top: 46px;
+	margin-left: 15px;
+	width: 335px;
+	height: 250px;
+	border-right: 1px solid #444343;
+}
+.about-more2{
+	float: left;
+	margin-top: 35px;
+	margin-left: 25px;
+	width: 460px;
+	height: 275px;
+}
+.about-line1{
+	margin-left: 21px;
+	margin-top: 13px;
+	height: 1px;
+	width: 852px;
+	background-color: #444343;
+}
+.about-more1_photo{
+	box-shadow: 0 0 16px -7px #fff;
+	text-align: center;
+	margin: 35px auto;
+	height: 160px;
+	width: 160px;
+	border-radius: 80px;
+	background: url(../../img/h-img.jpg) -29px -2px no-repeat;
+	background-size: 154%;
+}
+.about-more2--common{
+	height: 24px;
+	margin: 9px 0 21px 58px;
+	position: relative;
+}
+/*.about-more2--common:before{
+	display: block;
+	width: 27px;
+	height: 27px;
+	background-color: red;
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: -54px;
+}*/
+.iconcommon{
+	font-size: 2.2rem;
+	padding-right: 45px;
+}
+.about-wrap:hover .about{
+	-webkit-filter: brightness(200%); 
+	filter: brightness(200%);
+}
+.description-wrap:hover .description{
+	-webkit-filter: brightness(200%); 
+	filter: brightness(200%);
+}
+.skill-wrap:hover .skill{
+	-webkit-filter: brightness(200%); 
+	filter: brightness(200%);
+}
+.description-text{
+	line-height: 2.4rem;
+	text-indent: 2rem;
+}
+.side_line{
+	margin-left: 0px;
+	margin-top: 18px;
+	height: 1px;
+	width: 205px;
+	background-color: #444343;
+}
+.side_title{
+	margin:19px auto;
+	text-align: center;
+	font-size: 1.8rem;
+}
+.side_link{
+	margin-top: 15px;
+	margin: 15px 15px 0 15px;
+}
+.side_link a:hover{
+	-webkit-filter: brightness(200%); 
+	filter: brightness(200%);
+}
+</style>
 <article id="main">
 	<div id="myJD">
 		<div class="about-wrap co-wrap--style">
@@ -25,7 +192,7 @@
 				自我描述 description
 			</div>
 			<div class="description-more co-more--style">
-			<p class="description-text">我有良好的面向对象编程基础，工作了一段时间后对前端很感兴趣，又参与网络课程并自学了一段时间前端，熟悉js、html5、css3、css的书写规范以及css3D。会使用原生js配合腾讯云、koa2、gulp、webpack、模版引擎、nginx、pm2、websocket、git完成从服务器到前端的个人网站的搭建以及线上版本管理，包括对前后端代码的打包编译压缩。对网页性能优化有一定的认知。
+				<p class="description-text">我有良好的面向对象编程基础，工作了一段时间后对前端很感兴趣，又参与网络课程并自学了一段时间前端，熟悉js、html5、css3、css的书写规范以及css3D。会使用原生js配合腾讯云、koa2、gulp、webpack、模版引擎、nginx、pm2、websocket、git完成从服务器到前端的个人网站的搭建以及线上版本管理，包括对前后端代码的打包编译压缩。对网页性能优化有一定的认知。
 					熟悉es6以及react、vue等框架的使用。
 					了解php面向对象编程、mysql的基本使用，以及服务器接口测试、e2e测试、功能测试。</p>
 				</div>
@@ -50,5 +217,32 @@
 				<div class="side_link"><a href="">3、关于Es6/7的使用规范总结</a></div>
 			</div>
 		</div>
-
 	</article>
+	<script type="text/javascript">
+var Pjax_jd_Main = {
+	init() {
+		let aim = document.getElementById("main");
+		let topNav = document.getElementById("head");
+		let num = 0;
+		// window.addEventListener("scroll", function() {
+		// 	navFadeOut();
+		// })
+		aim.addEventListener("mousewheel", function(event) {
+			if (event.wheelDelta > 0) {
+				topNav.style.top = 0;
+			} else {
+				topNav.style.top = -100 + "px";
+			}
+		})
+
+		function navFadeOut() {
+			if (aim.getBoundingClientRect().top < 50) {
+				topNav.style.top = -(50 - aim.getBoundingClientRect().top) + "px";
+			} else {
+				topNav.style.top = 0;
+			}
+		}
+	}
+}
+Pjax_jd_Main.init();
+	</script>

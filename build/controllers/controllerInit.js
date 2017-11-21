@@ -15,8 +15,12 @@ const controllerInit = {
 		app.use(router(_ => {
 			_.get('/', _indexController2.default.index());
 			_.get('/index/index', _indexController2.default.index());
-			_.get('/index/index.html', _indexController2.default.index());
-			_.get('/my_jd', _indexController2.default.my_jd());
+			_.get('/index', _indexController2.default.main());
+			_.get('/index/jd', _indexController2.default.jd());
+			_.get('/index/work', _indexController2.default.work());
+			_.get('/index/work/chatonline', _indexController2.default.index());
+			_.get('/index/work/3d', _indexController2.default.index());
+			_.get('/index/work/game2048', _indexController2.default.index());
 		}));
 	}
 };

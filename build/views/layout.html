@@ -2,13 +2,58 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="x-dns-prefetch-control" content="on">
+	<link rel="dns-prefetch" href="http://cdn.bootcss.com/">
 	<title>网站首页</title>
-	 {% block styles %}{% endblock %}
+	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+	<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+	{% block styles %}{% endblock %}
 </head>
 <body>
-	<div>
-		 {% block content %}{% endblock %}
+	<header id="head">
+		<div class="head-logo">
+			<div class="head-logo_wrapper">
+				<h1 class="font1">
+					<span>wsy</span>
+					<h2 class="font2"> site by @wangshengyuan</h2>
+				</h1>
+			</div>
+		</div>
+		<div class="head-nav">
+			<ul class="head-menu">
+				<li class="head-menu_item h_item1"><a href="/index">网站首页</a></li>
+				<li class="head-menu_item h_item2"><a href="/index/jd">个人简介</a></li>
+				<li class="head-menu_item h_item3"><a href="/index/work">我的作品</a></li>
+				<li class="head-menu_item h_item4"><a href="">我的文章</a></li>
+				<li class="head-menu_item h_item5"><a href="">我的世界</a></li>
+			</ul>
+		</div>
+	</header>
+	<div id ="changeContent">
+		{% block content %}{% endblock %}
 	</div>
-	 {% block scripts %}{% endblock %}
+	<script type="text/javascript">
+		$(document).pjax('a','#changeContent');
+	</script>
+	<footer id="footer">
+		<div id="f-wrap">
+			<div class="f-line1">
+				<div class="iconfont icon-youqinglianjie"></div>
+				<div class="f--common"><a href="">友情链接</a></div>
+				<div class="f--common"><a href="" target="_blank">segment</a></div>
+				<div class="f--common"><a href="http://www.ruanyifeng.com/blog/" target="_blank">阮一峰博客</a></div>
+				<div class="f--common"><a href="" target="_blank">腾讯课堂</a></div>
+				<div class="f--common"><a href="" target="_blank">CSDN</a></div>
+				<div class="f--common"><a href="" target="_blank">w3cSchool</a></div>
+				<div class="f--common"><a href="" target="_blank">dribble</a></div>
+			</div>
+			<div class="f-line2">
+				Copyright © 2017 rocknice.cn All Rights Reserved 粤ICP备17073148号-1
+			</div>
+		</div>
+	</footer>
+	{% block scripts %}<script type="text/javascript">
+		
+	</script>{% endblock %}
 </body>
 </html>
