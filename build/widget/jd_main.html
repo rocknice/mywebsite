@@ -111,6 +111,7 @@ width: 400px;
 	background-size: 154%;
 }
 .about-more2--common{
+	letter-spacing: 0.06rem;
 	height: 24px;
 	margin: 9px 0 21px 58px;
 	position: relative;
@@ -142,8 +143,9 @@ width: 400px;
 	filter: brightness(200%);
 }
 .description-text{
-	line-height: 2.4rem;
-	text-indent: 2rem;
+	letter-spacing:0.13rem;
+	line-height: 2.6rem;
+	text-indent: 3rem;
 }
 .side_line{
 	margin-left: 0px;
@@ -158,6 +160,7 @@ width: 400px;
 	font-size: 1.8rem;
 }
 .side_link{
+	letter-spacing: 0.06rem;
 	margin-top: 15px;
 	margin: 15px 15px 0 15px;
 }
@@ -193,41 +196,42 @@ width: 400px;
 				自我描述 description
 			</div>
 			<div class="description-more co-more--style">
-				<p class="description-text">我有良好的面向对象编程基础，工作了一段时间后对前端很感兴趣，又参与网络课程并自学了一段时间前端，熟悉js、html5、css3、css的书写规范以及css3D。会使用原生js配合腾讯云、koa2、gulp、webpack、swig模版引擎、nginx、pm2、websocket、git完成从服务器到前端的个人网站的搭建以及线上版本管理，包括对前后端代码的打包编译压缩。对性能优化有一定的认知。
+				<p class="description-text">计算机相关专业本科毕业的我毕业加入了某知名电源公司做硬件，工作了一段时间后对电源行业热情渐退，大学时了解过互联网产品设计，对前端也颇感兴趣。前端是个充满活力且日新月异的行业，与自己喜欢求知的态度不谋而合，希望自己未来能够在前端图形学方向有所成就。</p>
+				<p class="description-text">做此个人网站用来做求职展示，并见证自己在前端行业的学习历程与进步，后续会不断完善。目前我熟悉js、html5、css3。熟练使用原生js配合腾讯云、koa2、gulp、webpack、swig模版引擎、nginx、pm2、websocket、git完成从服务器到前端的个人网站的搭建以及线上版本管理，包括对前后端代码的打包编译压缩。对性能优化有一定的认知。
 					熟悉es6以及react、vue等框架的使用，使用react、vue做过一些小demo。
 					了解php以及mysql的基本使用，以及服务器接口测试、e2e测试、功能测试。</p>
-				<p class="description-text">爱好：唱歌、摄影、设计</p>
-				</div>
-				</div>
-
-				<div class="skill-wrap co-wrap--style">
-					<div class="main-front"></div>
-					<div class="skill  co--style">
-						我的技能 skills
-					</div>
-					<div class="skill-more co-more--style">
-						<p>熟悉：html5、css3、js、jquery、nodejs</p>
-						<p>掌握：es6 、webpack、gulp、react、vue</p>
-						<p>了解：canvas、php、typescript</p>
-					</div>
-				</div>
-				<div id="myJD-side">
-					<div class="side_title">热门链接</div>
-					<div class="side_line"></div>
-					<div class="side_link"><a href="">1、vue与vue-ssr的原理与实践</a></div>
-					<div class="side_link"><a href="">2、react与redux的原理与实践</a></div>
-					<div class="side_link"><a href="">3、关于Es6/7的使用规范总结</a></div>
-					<div class="side_link"><a href="">4、对性能优化的总结</a></div>
-					<div class="side_link"><a href="">5、css3D及矩阵的实践与应用</a></div>
+					<p class="description-text">爱好：唱歌、摄影、设计。</p>
 				</div>
 			</div>
-		</section>
-		<script type="text/javascript">
-			var Pjax_jd_Main = {
-				init() {
-					let aim = document.getElementById("main");
-					let topNav = document.getElementById("head");
-					let num = 0;
+
+			<div class="skill-wrap co-wrap--style">
+				<div class="main-front"></div>
+				<div class="skill  co--style">
+					我的技能 skills
+				</div>
+				<div class="skill-more co-more--style">
+					<p>熟悉：html5、css3、js、jquery、nodejs</p>
+					<p>掌握：es6 、webpack、gulp、react、vue</p>
+					<p>了解：canvas、php、typescript</p>
+				</div>
+			</div>
+			<div id="myJD-side">
+				<div class="side_title">热门链接</div>
+				<div class="side_line"></div>
+				<div class="side_link"><a href="">1、vue与vue-ssr的原理与实践</a></div>
+				<div class="side_link"><a href="">2、react与redux的原理与实践</a></div>
+				<div class="side_link"><a href="">3、关于Es6/7的使用规范总结</a></div>
+				<div class="side_link"><a href="">4、对性能优化的总结</a></div>
+				<div class="side_link"><a href="">5、css3D及矩阵的实践与应用</a></div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		var Pjax_jd_Main = {
+			init() {
+				let aim = document.getElementById("main");
+				let topNav = document.getElementById("head");
+				let num = 0;
 		// window.addEventListener("scroll", function() {
 		// 	navFadeOut();
 		// })
