@@ -51,7 +51,17 @@ const app = new _koa2.default();
 const hpserver = app.listen(_config2.default.port, () => {
 	console.log('wsy listening on port ', _config2.default.port);
 });
+
+app.context.render = _co2.default.wrap((0, _koaSwig2.default)({
+	root: _config2.default.viewDir,
+	autoescape: true,
+	cache: 'memory',
+	ext: 'html',
+	writeBody: false
+}));
+app.use((0, _koaStatic2.default)(_config2.default.staticDir));
 const io = require('socket.io')(hpserver); //把websockt挂载到端口3000上
+
 
 let c = {
 	count: 0
@@ -91,14 +101,6 @@ io.on('connection', function (socket) {
 	});
 });
 
-app.context.render = _co2.default.wrap((0, _koaSwig2.default)({
-	root: _config2.default.viewDir,
-	autoescape: true,
-	cache: 'memory',
-	ext: 'html',
-	writeBody: false
-}));
-app.use((0, _koaStatic2.default)(_config2.default.staticDir));
 //管理错误日志打印的地方
 _log4js2.default.configure({
 	appenders: {
