@@ -4,7 +4,7 @@
 	"log_date_format": "YYYY-MM-DD HH:mm Z",
 	"error_file": "/var/log/httpserver/httpserver.stderr.log",
 	"out_file": "log/httpserver.stdout.log",
-	"instances": "max", //or 0 => 'max'
+	"instances": "max",
 	"watch": true,
 	"exec_mode": "cluster",
 }
