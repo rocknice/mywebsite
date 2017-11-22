@@ -22,6 +22,7 @@ const controllerInit = {
 			_.get('/index/work/3d', _indexController2.default.work_3d());
 			_.get('/index/work/game2048', _indexController2.default.game2048());
 			_.get('/index/work/jdmall', _indexController2.default.jdmall());
+			_.get('/index/work/gallery', _indexController2.default.gallery());
 		}));
 	}
 };

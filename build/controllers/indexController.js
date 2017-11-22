@@ -95,6 +95,14 @@ const indexController = {
 				title: 'chat-online'
 			});
 		};
+	},
+	gallery() {
+		return async (ctx, next) => {
+			//表示此函数里有异步的请求	
+			ctx.body = await ctx.render('gallery', {
+				title: '动感相册'
+			});
+		};
 	}
 
 };

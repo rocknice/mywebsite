@@ -22,7 +22,7 @@ const errorHandler = {
 			await next();
 			if (404 != ctx.status) return;
 			ctx.status = 404;
-			ctx.body = "页面找不到，发生了404";
+			ctx.body = "sorry 该板块正在开发中～";
 		});
 	}
 };
