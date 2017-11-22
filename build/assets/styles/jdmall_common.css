@@ -1,0 +1,32 @@
+a,body, dd, div, dl, dt, em, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img,label,li, ol, p,span, strong, u, ul{
+	margin: 0;
+	padding: 0;
+}
+em, i, u {
+	font-style: normal;
+}
+body{
+	color: #666;
+	font-size: 12px;
+	font-family: 12px tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\u5b8b\u4f53",sans-serif;
+	font-style: normal;
+}
+.top-bar{
+	background: #e3e4e5;
+	border-bottom: solid 1px #ddd;
+}
+ul {
+	list-style: none;
+}
+a {
+	color: #666;
+	text-decoration: none;
+}
+img{
+	border: 0;
+	vertical-align: middle;
+}
+.nav-global,.w{
+	width: 1210px;
+	margin:0 auto;
+}

@@ -18,9 +18,10 @@ const controllerInit = {
 			_.get('/index', _indexController2.default.main());
 			_.get('/index/jd', _indexController2.default.jd());
 			_.get('/index/work', _indexController2.default.work());
-			_.get('/index/work/chatonline', _indexController2.default.index());
-			_.get('/index/work/3d', _indexController2.default.index());
-			_.get('/index/work/game2048', _indexController2.default.index());
+			_.get('/index/work/chatonline', _indexController2.default.chatonline());
+			_.get('/index/work/3d', _indexController2.default.work_3d());
+			_.get('/index/work/game2048', _indexController2.default.game2048());
+			_.get('/index/work/jdmall', _indexController2.default.jdmall());
 		}));
 	}
 };

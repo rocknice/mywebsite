@@ -47,7 +47,8 @@
     "postcss-loader": "^2.0.8",
     "precss": "^2.0.0",
     "request": "^2.83.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "socket.io": "^2.0.4"
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",

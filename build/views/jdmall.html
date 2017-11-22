@@ -1,0 +1,2624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东全球购商城</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/jdmall_common.css">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<style type="text/css">
+		/*	顶部导航*/
+		.top-bar a {
+			font-size: 12px;
+			color: #999;
+		}
+
+		.top-bar a:hover{
+			color: red;
+		}
+		.top-guild .free-rg{
+			color: #f30213;
+		}
+		.top-content{
+			height: 30px;
+			width: 1210px;
+			line-height: 30px;
+			margin:0 auto;
+		}
+		.top-locate li{
+			float: left;
+		}
+		.top-locate li.location{
+			padding: 0 14px 0 8px;
+		}
+		.top-locate li.hp{
+			padding-right:4px;
+		}
+		.top-locate .icon-home , .top-locate .icon-location{
+			padding-right: 4px;
+		}
+		.location{
+			position: relative;
+		}
+		.location .w-location{
+			display: none;
+			z-index: 99;
+			position: absolute;
+			left: 0;
+			width: 301px;
+			height: 220px;
+			background-color: #fff;
+			border: 1px solid #ddd;
+			line-height: 24px;
+		}
+		.w-location .w-list-location{
+			margin-top: 16px;
+			margin-left: 8px;
+		}
+		.w-location li{
+			margin: 2px 8px;
+			padding:0 7px;
+		}
+		.w-location li.nm{
+			margin-right: 0;
+		}
+		.w-location li.js{
+			margin-left: 4px;
+		}
+		.location:hover{
+			background-color: #fff;
+		}
+		.location:hover .w-location{
+			display: block;
+			border-top: none;
+		}
+		.location li:hover{
+			background-color: #f1f1f1;
+		}
+		.top-guild li {
+			padding: 0 8px ;
+			float: left;
+		}
+		.top-guild{
+			float: right;
+		}
+		.my-jd{
+			position: relative;
+		}
+		.my-jd:hover .my-jd-list{
+			display: block;
+		}
+		.my-jd:hover .my-jd-list .list1{
+			border-top:none;
+		}
+		.my-jd:hover{
+			background-color: #fff;
+		}
+		.my-jd .my-jd-list{
+			width: 280px;
+			background: #fff;
+			position: absolute;
+			left: -1px;
+			z-index: 99;
+			display: none;
+		}
+		.my-jd-list .list1{
+			height: 90px;
+			border: 1px solid #ddd;
+		}
+		.my-jd-list .list1 .list-top li{
+			color:#999;
+			margin-left: 4px;
+			margin-right:42px;
+			float: left;
+		}
+		.my-jd-list li.one, .my-jd-list li.two{
+			margin-top:6px;
+		}
+		.cus-ser{
+			position: relative;
+		}
+		.list1{
+			line-height: 26px;
+		}
+		.cus-ser .cus-ser-list{
+			width: 170px;
+			background: #fff;
+			position: absolute;
+			left: -1px;
+			z-index: 99;
+			display: none;
+		}
+		.cus-ser .list1{
+			height: 135px;
+			border: 1px solid #ddd;
+		}
+		.cus-ser .list1 .list-top li{
+			color:#999;
+			margin-left: 2px;
+			margin-right:10px;
+			float: left;
+		}
+		.cus-ser:hover .cus-ser-list{
+			border-top: none;
+			display: block;
+		}
+		.cus-ser:hover .cus-ser-list .list1{
+			border-top: none;
+		}
+		.cus-ser:hover{
+			background-color: #fff;
+		}
+		.top-guild li.spacer{
+			width: 1px;
+			height: 12px;
+			margin-top: 9px;
+			padding: 0;
+			background: #ccc;
+			overflow: hidden;
+		}
+		.top-guild .icon-unfold {
+			padding-left: 6px;
+		}
+		.head-banner{
+			position: relative;
+			font-size:0
+		}
+		.rm-banner{
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			width: 20px;
+			height: 20px;
+			background: url(./img/re-banner.png) no-repeat;
+			cursor: pointer;
+			z-index: 99;
+		}
+
+
+		/*搜索和logo*/
+		.logo-wrap {
+			float: left;
+			width: 276px;
+			height: 50px;
+			margin: 15px 0 22px;
+		}
+		.jd-logo {
+			display: block;
+			margin-top: 2px;
+			width: 134px;
+			height: 42px;
+			background: url(./img/jd-logo.png) no-repeat 0 0;
+			background-size: 134px 42px;
+		}
+		.global-sale{
+			position: relative;
+			top: 27px;
+			left: -90px;
+			float: left;
+			margin-right: 10px;
+			font-size: 20px;
+			line-height: 45px;
+			font-weight: 400;
+			color: #666;
+		}
+		.s-w{
+			width: 1210px;
+			height: 90px;
+			margin: 0 auto;
+		}
+		.search{
+			float: left;
+		}
+		.search .text{
+			float: left;
+			width: 360px;
+			height: 24px;
+			line-height: 24px;
+			color: #999;
+			padding: 4px;
+			margin-bottom: 4px;
+			border-width: 2px 0 2px 2px;
+			border-color: #413b49;
+			border-style: solid;
+			outline: 0;
+			font-size: 12px;
+		}
+		.search .button{
+			float: left;
+			width: 80px;
+			height: 36px;
+			font-family: tahoma,arial;
+			background: #413b49;
+			border: none;
+			line-height: 1;
+			color: #fff;
+			font-size: 16px;
+			cursor: pointer;
+			border-radius: 0px;
+		}
+		.search-box{
+			float: left;
+			margin: 28px 0 0 90px;
+		}
+		input::-webkit-input-placeholder{
+			color: #999;opacity:1;
+		}
+		.trolley-wrap{
+			float: left;
+		}
+		.trolley{
+			float: left;
+			width: 140px;
+			border: 1px solid #DFDFDF;
+			box-sizing: border-box;
+			padding: 0 28px 0 17px;
+			background: #F9F9F9;
+			line-height: 34px;
+			position: relative;
+			top: 27px;
+			left: 32px;
+			cursor: default;
+			zoom: 1;
+		}
+		.trolley .details{
+			display: none;
+			width: 310px;
+			height: 68px;
+			position: absolute;
+			top:36px;
+			left: -173px;
+			background-color: #fff;
+			border: 1px solid #DFDFDF;
+			box-shadow: 0 0 5px 1px #ddd;
+		}
+		.details-w{
+			margin: 9px 0 0 38px;
+			height: 49px;
+			line-height: 49px;
+			overflow: hidden;
+			color: #999;
+		}
+		.trolley a{
+			color: #f30213;
+			font-size: 12px;
+		}
+		.trolley .details i {
+			float: left;
+			width: 56px;
+			height: 49px;
+			background-image: url(./img/trolley.png);
+		}
+		.trolley:hover .t-mask{
+			display: block;
+			width: 138px;
+			height: 28px;
+			position: absolute;
+			top: 26px;
+			left: 0px;
+			background-color: #fff;
+		}
+		.trolley:hover .details{
+			display: block;
+		}
+		.trolley:hover{
+			height: 40px;
+			z-index: 99;
+			background: #fff;
+			box-shadow: 0 0 5px 1px #ddd;
+		}
+		.ci-count {
+			position: absolute;
+			top: 7px;
+			left: 105px;
+			display: inline-block;
+			padding: 1px;
+			font-size: 12px;
+			line-height: 14px;
+			letter-spacing: -1px;
+			color: #fff;
+			background-color: #da1026;
+			border-radius: 7px;
+			width: 14px;
+			font-family: tahoma,arial;
+			text-align: center;
+		}
+		.icon-cart{
+			position: relative;
+			left: 10px;
+			top: 0;
+			color: #f30213;
+			font-size: 17px;
+		}
+		#hotwords{
+			width: 400px;
+			height: 20px;
+			line-height: 20px;
+			position: relative;
+			right: -150px;
+			float: left;
+
+		}
+		#hotwords a{
+			font-size: 12px;
+			color: #999;
+		}
+		#hotwords a:hover{
+			color:red;
+		}
+		#hotwords .hot-goods{
+			float: left;
+			padding-left: 10px;
+		}
+
+		/*	主导航和banner*/
+		.nav-global{
+			height: 33px;
+			line-height: 33px;
+			margin-top: 8px;
+			overflow: hidden;
+		}
+		.nav-global a:hover{
+			color:red;
+		}
+		.nav-global .nav-global-title{
+			float: left;
+			position: relative;
+			z-index: 10;
+			width: 200px;
+			background-color: #413b49;
+			height: 33px;
+			line-height: 33px;
+			overflow: visible;
+		}
+		.nav-global .dt{
+			padding: 0 10px;
+			font-size: 14px;
+			position: relative;
+			bottom: 0;
+			color: #fff;
+		}
+		.nav-global .dt i{
+			float: left;
+			margin: 10px 10px 0 8px;
+			width: 16px;
+			height: 12px;
+			background: url(./img/globalsales.png) no-repeat -200px 0;
+		}
+		.nav-global li{
+			float: left;
+		}
+		.nav-global li a{
+			padding: 0 22px;
+			text-align: center;
+			font-size: 14px;
+			line-height: 33px;
+			color: #333;
+		}
+
+		.main-nav{
+			position: absolute;
+			width: 200px;
+			height: 442px;
+			z-index: 6;
+			background-color: #514b58;
+			background-color: rgba(81,75,88,.8);
+		}
+		.main-nav .item-header{
+			padding: 0 10px;
+			width: 180px;
+			height: 34px;
+			position: relative;
+		}
+		.bg-banner a:hover{
+			color:red;
+		}
+		.main-nav .item:hover{
+			background-color: #413b49;
+		}
+		.main-nav .item:hover .item_body{
+			display: block;
+		}
+		.main-nav .item .item_body{
+			display: none;
+		}
+		.main-nav .item{
+			line-height: 34px;
+			height: 34px;
+		}
+		.main-nav .item .header-title a{
+			font-weight: 400;
+			font-size: 14px;
+			color: #fff;
+		}
+		.left-nav .item{
+			position: relative;
+		}
+		.item_body{
+			position: absolute;
+			top:0;
+			left: 200px;
+			background-color: #fff;
+			width: 850px;
+			height: 442px;
+			border-left: 0;
+			z-index: 21;
+			box-shadow: 2px 0 5px rgba(0,0,0,.3);
+		}
+		.item_body_wrapper{
+			padding: 10px;
+		}
+		.globalsales_nav_sub {
+			margin-right: 40px;
+			width: 600px;
+			float: left;
+		}
+		.globalsales_nav_sub_item {
+			position: relative;
+			padding-left: 80px;
+		}
+		.globalsales_nav_body .item_header_title {
+			position: relative;
+			height: 34px;
+			line-height: 34px;
+			font-size: 14px;
+			font-weight: 400;
+		}
+		.globalsales_nav_sub_title {
+			overflow: hidden;
+			position: absolute;
+			left: 0;
+			top: 1px;
+			width: 70px;
+			text-align: right;
+			font-weight: 700;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		.globalsales_nav_sub_item1 .globalsales_nav_sub_main {
+			border-top: 0;
+		}
+		.globalsales_nav_recommend {
+			float: left;
+			width: 190px;
+		}
+		.globalsales_nav_recommend a{
+			display: block;
+			width: 190px;
+			margin-bottom: 10px;
+		}
+		.globalsales_nav_sub_main {
+			overflow: hidden;
+			padding: 6px 0;
+			border-top: 1px dashed #eee;
+		}
+		.globalsales_nav_sub_main a{
+			float: left;
+			margin: 4px 0;
+			padding: 0 10px;
+			height: 16px;
+			border-left: 1px solid #e0e0e0;
+			line-height: 16px;
+			white-space: nowrap;
+			font-size: 12px;
+			color: #999;
+		}
+		.icons-arrow{
+			position: absolute;
+			right: 15px;
+			top: 13px;
+			width: 5px;
+			height: 8px;
+			background: url(./img/globalsales.png) no-repeat -170px 0;
+		}
+		.bg-banner{
+
+		}
+		.header-title{
+			margin-left: 10px;
+		}
+		.slide-banner{
+			position: relative;
+			height: 446px;
+		}
+		.slide-banner ul.sb-wrap{
+			height: 450px;
+			position: relative;
+			overflow: hidden;
+		}
+		.w{
+			position: relative;
+		}
+		.banner-img{
+			position: absolute;
+			margin-left: -330px;
+			z-index: 0;
+			opacity: 0;
+			transition: opacity 1s;
+		}
+		.sb-wrap .current{
+			transition: opacity 1s;
+			z-index: 1;
+			opacity: 1;
+		}
+		.sb-nav .current {
+			width: 20px;
+		}
+
+		.sb-nav{
+			position: absolute;
+			z-index: 1;
+			left: 50%;
+			bottom: 20px;
+			font-size: 0;
+			padding: 3px 6px;
+			height: 10px;
+			border-radius: 12px;
+			background-color: #0d001b;
+			background-color: rgba(13,0,27,.3);
+		}
+		.sb-nav li{
+			display: inline-block;
+			margin-right: 10px;
+			width: 10px;
+			height: 10px;
+			border-radius: 5px;
+			background-color: #fff;
+		}
+		.sb-nav .last-item{
+			margin-right: 0;
+		}
+		.slide-banner:hover .sb-btn a{
+			display: block;
+		}
+		.sb-btn a {
+			display: none;
+			position: absolute;
+			z-index: 3;
+			top: 212px;
+			width: 40px;
+			height: 40px;
+			background: url(./img/globalsales.png) no-repeat;
+		}
+		a.page-prev {
+			left: 280px;
+			background-position: 0 0;
+		}
+		a.page-prev:hover{
+			background-position: -80px 0;
+		}
+		a.page-next {
+			right: 75px;
+			background-position: -40px 0;
+		}
+		a.page-next:hover{
+			background-position: -120px 0;
+		}
+		/*秒杀*/
+		.seckill-title div{
+			margin: 0 auto;
+			width: 260px;
+			height: 40px;
+			font-size: 0;
+			background: url(./img/globalsales.png) no-repeat 0 -40px;
+		}
+		.seckill-title {
+			position: relative;
+			margin: 20px 0 10px 0;
+			height: 40px;
+		}
+		.seckill-goods{
+			overflow: hidden;
+		}
+		.seckill-slide{
+			float: left;
+			margin-right: 21px;
+			width: 1059px;
+			height: 358px;
+			overflow: hidden;
+		}
+		.seckill-slide>a{
+			float: left;
+			display: block;
+			width: 353px;
+			height: 358px;
+			box-sizing: border-box;
+		}
+		.seckill-hot{
+			position: relative;
+			float: left;
+			padding: 25px;
+			width: 303px;
+			height: 308px;
+		}
+		.s-line{
+			left: 0;
+			top: 36px;
+			width: 1px;
+			height: 300px;
+			background-color: #f5b202;
+			-webkit-transition: all .15s ease;
+			transition: all .15s ease;
+			position: absolute;
+		}
+		.seckill-hot:hover .s-line{
+			width: 3px;
+		}
+		.seckill-hot:hover .s-arrow{
+			left: 24px;
+		}
+		.seckill-hot:hover .s-img img{
+			left: 155px;
+		}
+		.s-name{
+			margin-bottom: 30px;
+			height: 60px;
+			line-height: 30px;
+			overflow: hidden;
+			font-size: 16px;
+			font-weight: 700;
+			color: #333;
+		}
+		.s-price em{
+			height: 32px;
+			line-height: 32px;
+			overflow: hidden;
+			color: #e43a3a;
+			font-size: 22px;
+			font-weight: 700;
+		}
+		.s-price em span {
+			font-size: 12px;
+		}
+		.s-price p {
+			font-size: 12px;
+			height: 22px;
+			line-height: 22px;
+			color: #999;
+			text-decoration: line-through;
+		}
+		.s-arrow {
+			position: absolute;
+			left: 20px;
+			top: 266px;
+			width: 46px;
+			height: 46px;
+			background: url(./img/globalsales.png) no-repeat 0 -80px;
+			-webkit-transition: all .15s ease;
+			transition: all .15s ease;
+		}
+		.s-img {
+			text-align: right;
+		}
+		.s-img img {
+			position: absolute;
+			left: 160px;
+			width: 160px;
+			height: 160px;
+			-webkit-transition: all .5s ease;
+			transition: all .5s ease;
+		}
+		.seckill-item{
+			float: left;
+			margin-right: 5px;
+			padding-top: 35px;
+			width: 10px;
+		}
+		.seckill-dot1{
+			margin-bottom: 10px;
+			width: 8px;
+			height: 8px;
+			border: 1px solid #000;
+			background-color: #000;
+			border-radius: 5px;
+		}
+		.seckill-btn{
+			padding-top: 160px;
+			width: 90px;
+			float: left;
+		}
+		.seckill-btn a{
+			float: left;
+			margin-right: 10px;
+			width: 35px;
+			height: 35px;
+			background: url(./img/globalsales.png) no-repeat;
+			background-position: -50px -80px;
+		}
+		.seckill-btn .page-next{
+			background-position: -90px -80px;
+		}
+		.seckill-btn .page-prev:hover{
+			background-position: -130px -80px;
+		}
+		.seckill-btn .page-next:hover{
+			background-position: -170px -80px;
+		}
+		/*		特色频道*/
+		.spec-channal{
+			margin-top: 20px;
+			overflow: hidden;
+		}
+		.spec-title{
+			text-align: center;
+			color: #333;
+			font: 22px/40px normal;
+			margin-bottom: 20px;
+			height: 40px;
+		}
+		.spec-goods{
+			height: 346px;
+			border:1px solid black;
+		}
+		.spec-goods .item{
+			position: relative;
+			float: left;
+			width: 180px;
+			height: 364px;
+			overflow: hidden;
+		}
+		/*		热卖推荐*/
+		.hot-rec {
+			margin-top: 20px;
+			overflow: hidden;
+		}
+		.hot-title{
+			text-align: center;
+			color: #333;
+			font: 22px/40px normal;
+			margin-bottom: 20px;
+			height: 40px;
+		}
+		.hot-goods{
+			position: relative;
+			overflow: visible;
+		}
+		.item-list{
+			height: 300px;
+		}
+		.item-list .current{
+			transition: opacity 1s;
+			opacity: 1;
+			z-index: 1;
+		}
+		.item-list li{
+			transition: opacity 1s;
+			opacity: 0;
+			position: absolute;
+		}
+		.item-lis .item img{
+			width: 1210px;
+			height: 300px;
+			font-size: 0;
+		}
+		.item-dot{
+			padding: 15px 0;
+			height: 10px;
+			text-align: center;
+		}
+		.nav-dot{
+			display: inline-block;
+			margin: 0 4px;
+			width: 8px;
+			height: 8px;
+			border: 1px solid #333;
+			border-radius: 50%;
+		}
+		.item-dot .current{
+			background-color: black;
+		}
+		/*		新品上市*/
+		.n-con{
+			margin-top:20px;
+			height: 366px;
+		}
+		.new-goods{
+			overflow: hidden;
+		}
+		.list-item{
+			float: left;
+			width: 4000px;
+		}
+		.list-item .item{
+			width: 242px;
+			height: 366px;
+			float: left;
+			background-color: #f7f7f7;
+			position: relative;
+			text-align: center;
+		}
+		.new-goods:hover .tab-page a{
+			display: block;
+		}
+		.tab-page a.page-prev:hover{
+			background-position: -110px -130px;
+		}
+		.tab-page a.page-next:hover{
+			background-position: -150px -130px;
+		}
+		.new-goods .item:hover{
+			background-color: #eee;
+		}
+		.new-goods .item:hover .n-mask{
+			opacity: .07;
+			left: 36px;
+			width: 170px;
+			height: 170px;
+		}
+		.new-goods .item:hover img{
+			width: 170px;
+			height: 170px;
+			margin: 0 auto 22px;
+		}
+		.n-wrap{
+			position: relative;
+			padding: 40px 0 20px;
+		}
+		.n-wrap img{
+			margin: 0 auto 32px;
+			width: 160px;
+			height: 160px;
+			-webkit-transition: all .15s;
+			transition: all .15s;
+		}
+		.next{
+			height: 50px;
+			background-color: yellow;
+		}
+		.n-mask {
+			position: absolute;
+			width: 160px;
+			height: 160px;
+			background-color: #000;
+			opacity: .03;
+			top: 40px;
+			left: 41px;
+			-webkit-transition: all .15s;
+			transition: all .15s;
+		}
+		.n-name{
+			margin-bottom: 15px;
+			padding: 0 20px;
+			height: 40px;
+			line-height: 20px;
+			color: #333;
+			overflow: hidden;
+		}
+		.n-price{
+			height: 24px;
+			line-height: 24px;
+			color: #e43a3a;
+			font-size: 18px;
+			font-weight: 700;
+		}
+		.tab-page a {
+			display: none;
+			position: absolute;
+			top: 50%;
+			z-index: 3;
+			margin-top: -30px;
+			width: 36px;
+			height: 61px;
+			background: url(./img/globalsales.png) no-repeat;
+		}
+		.tab-page a.page-prev {
+			left: 0;
+			background-position: -30px -130px;
+		}
+		.tab-page a.page-next {
+			right: 0;
+			background-position: -70px -130px;
+		}
+
+		/*		更多商品*/
+		.m-wrap{
+			margin-top: 20px;
+			background-color: #f7f7f7;
+		}
+		.n-img{
+			margin: 0 auto 32px;
+			width: 160px;
+			height: 160px;
+			-webkit-transition: all .15s;
+			transition: all .15s;
+		}
+		.m-item{
+			position: relative;
+			float: left;
+			margin: 0 0 10px 10px;
+			padding: 32px 17px;
+			width: 200px;
+			height: 260px;
+			background-color: #fff;
+			text-align: center;
+			-webkit-transition: all .2s linear;
+			transition: all .2s linear;
+		}
+		.m-goods{
+			margin-left: -10px;
+			padding-bottom: 30px;
+		}
+		.m-goods .m-item:hover {
+			box-shadow: 0 0 25px 2px #e1e1e1 ;
+		}
+		.m-goods .m-item:hover img{
+			margin: 0 auto 20px;
+			width: 170px;
+			height: 170px;
+		}
+		.m-title{
+			height: 116px;
+		}
+		.mt{
+			padding: 0 0 0 88px;
+			height: 116px;
+		}
+		.mt h3 {
+			padding-top: 31px;
+			width: 146px;
+			height: 56px;
+			float: left;
+		}
+		.mt i {
+			margin: 1px 8px 0 0;
+			width: 14px;
+			height: 52px;
+			background: url(./img/globalsales.png) no-repeat -199px -129px;
+			font-size: 0;
+			float: left;
+		}
+		.m-content{
+			display: block;
+		}
+		.mt em {
+			width: 60px;
+			font-size: 24px;
+			line-height: 28px;
+			color: #333;
+			float: left;
+		}
+		.m-nav{
+			position: relative;
+			padding-top: 19px;
+			width: 976px;
+			height: 56px;
+			border-bottom: 1px solid #fff;
+			float: left;
+		}
+		.m-nav-item{
+			float: left;
+			width: 122px;
+			height: 56px;
+			line-height: 56px;
+			font-size: 14px;
+			color: #333;
+			text-align: center;
+			cursor: pointer;
+			font-weight: 700;
+		}
+		.nav-line {
+			position: absolute;
+			left: 0;
+			bottom: -2px;
+			z-index: 3;
+			width: 122px;
+			height: 3px;
+			background: #333;
+			-webkit-transition: left .5s ease-in-out;
+			transition: left .5s ease-in-out;
+		}
+		.clr{
+			clear: both;
+		}
+		.m-btn{
+			margin: 30px auto;
+			width: 250px;
+			height: 60px;
+			line-height: 60px;
+			border: 1px solid #999;
+			color: #333;
+			font-size: 16px;
+			text-align: center;
+			border-radius: 30px;
+			cursor: pointer;
+			overflow: hidden;
+		}
+		.end-banner{
+			padding-bottom:30px;
+		}
+		
+		/*		侧边导航*/
+		.side-bar{
+			top: -6px;
+			right: 0px;
+			display: block;
+			width: 50px;
+			position: fixed;
+			right: 0;
+			background-color: #f6f6f6;
+			z-index: 100;
+		}
+		.side-block{
+			margin-bottom: 1px;
+		}
+		.side-block a{
+			display: table;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			color: #333;
+			font-size: 14px;
+			background-color: #fff;
+			line-height: 18px;
+		}
+		.side-block a span{
+			display: table-cell;
+			padding: 0 5px;
+			vertical-align: middle;
+			cursor: pointer;
+			text-align: center;
+		}
+		.side-bar-list .top span{
+			color:#fff;
+			background-color: #413b49;
+		}
+		.service{
+			margin-top: 1px;
+		}
+		.service a{
+			display: block;
+			width: 50px;
+			height: 50px;
+			background: url(./img/globalsales.png) no-repeat -300px -80px #fff;
+		}
+		/*		底部信息*/
+	</style>
+</head>
+<body>
+	<!-- 	顶部导航 -->
+	<header class="top-bar">
+		<div class="top-content">
+			<ul class="top-locate">
+				<li class="hp"><i class="iconfont icon-home"></i><a href="#">京东首页</a></li>
+				<li class="location">
+					<i class="iconfont icon-location"></i><a href="#">钓鱼岛</a>
+					<div class="w-location">
+						<ul class="w-list-location">
+							<li><a href="#">北京</a></li>
+							<li><a href="#">上海</a></li>
+							<li><a href="#">天津</a></li>
+							<li><a href="#">重庆</a></li>
+							<li><a href="#">河北</a></li>
+							<li><a href="#">山西</a></li>
+							<li><a href="#">河南</a></li>
+							<li><a href="#">辽宁</a></li>
+							<li><a href="#">吉林</a></li>
+							<li><a href="#">黑龙江</a></li>
+							<li class="nm"><a href="#">内蒙古</a></li>
+							<li class="js"><a href="#">江苏</a></li>
+							<li><a href="#">山东</a></li>
+							<li><a href="#">安徽</a></li>
+							<li><a href="#">浙江</a></li>
+							<li><a href="#">福建</a></li>
+							<li><a href="#">湖北</a></li>
+							<li><a href="#">湖南</a></li>
+							<li><a href="#">广东</a></li>
+							<li><a href="#">广西</a></li>
+							<li><a href="#">江西</a></li>
+							<li><a href="#">四川</a></li>
+							<li><a href="#">海南</a></li>
+							<li><a href="#">贵州</a></li>
+							<li><a href="#">云南</a></li>
+							<li><a href="#">西藏</a></li>
+							<li><a href="#">陕西</a></li>
+							<li><a href="#">甘肃</a></li>
+							<li><a href="#">青海</a></li>
+							<li><a href="#">宁夏</a></li>
+							<li><a href="#">新疆</a></li>
+							<li><a href="#">港澳</a></li>
+							<li><a href="#">台湾</a></li>
+							<li><a href="#">海外</a></li>
+							<li><a href="#">钓鱼岛</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<ul class="top-guild">
+				<li><a href="#">你好，请登录</a></li>
+				<li><a href="#" style="color: #f30213">免费注册</a></li>
+				<li class="spacer"><a href="#"></a></li>
+				<li><a href="#">我的订单</a></li>
+				<li class="spacer"><a href="#"></a></li>
+				<li class="my-jd">
+					<a href="#">我的京东</a>
+					<i class="iconfont icon-unfold"></i>
+					<div class="my-jd-list">
+						<div class="list1">
+							<ul class="list-top">
+								<li class="one"><a href="#">待处理订单</a></li>
+								<li class="two"><a href="#">消息</a></li>
+								<li><a href="#">返修退换货</a></li>
+								<li><a href="#">我的问答</a></li>
+								<li><a href="#">降价商品&nbsp;&nbsp;&nbsp;</a></li>
+								<li><a href="#">我的关注</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="spacer"><a href="#"></a></li>
+				<li><a href="#">京东会员</a></li>
+				<li class="spacer"><a href="#"></a></li>
+				<li><a href="#">企业采购</a></li>
+				<li class="spacer"><a href="#"></a></li>
+				<li class="cus-ser">
+					<a href="#">客户服务</a><i class="iconfont icon-unfold"></i>
+					<div class="cus-ser-list">
+						<div class="list1">
+							<p class="cus" style="margin-left: 10px; font-weight: 700">客户</p>
+							<ul class="list-top">
+								<li><a href="#">帮助中心</a></li>
+								<li><a href="#">售后服务</a></li>
+								<li><a href="#">在线客服</a></li>
+								<li><a href="#">意见建议</a></li>
+								<li><a href="#">电话客服</a></li>
+								<li><a href="#">客服邮箱</a></li>
+								<li><a href="#">金融咨询</a></li>
+								<li><a href="#">售全球客服</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="spacer"><a href="#"></a></li>
+				<li class="web-nav"><a href="#">网站导航</a><i class="iconfont icon-unfold"></i></li>
+				<li class="spacer"><a href="#"></a></li>
+				<li><a href="#">手机京东</a></li>
+			</ul>
+		</div>
+	</header>
+	<!-- 	logo和搜索框 -->
+	<div class="head-banner w">
+		<a href="#"><img src="./img/head-banner.jpg" width="1210px"></a>
+		<div class="rm-banner"></div>
+	</div>
+	<div class="s-w">
+		<div class="search w">
+			<div class="logo-wrap">
+				<a href="#" class="jd-logo"></a>
+			</div>
+			<div class="global-sale">全球售</div>
+			<div class="search-box">
+				<input type="text" name="search" class="text" placeholder="全球售"/>
+				<button class="button">搜索</button>
+				<div></div>
+			</div>
+			<div class="trolley-wrap">
+				<div class="trolley">
+					<a href="#">我的购物车</a>
+					<i class="iconfont icon-cart"></i>
+					<i class="ci-count">0</i>
+					<div class="details">
+						<div class="details-w">
+							<i></i>
+							购物车中还没有商品，赶紧选购吧！
+						</div>
+					</div>
+					<div class="t-mask"></div>
+				</div>
+			</div>
+			<div id="hotwords">
+				<ul>
+					<li class="hot-goods"><a href="#">VIVO X9S</a></li>
+					<li class="hot-goods"><a href="#">瑜伽</a></li>
+					<li class="hot-goods"><a href="#">电饭煲</a></li>
+					<li class="hot-goods"><a href="#">火火兔</a></li>
+					<li class="hot-goods"><a href="#">衬衫</a></li>
+					<li class="hot-goods"><a href="#">厨房用具</a></li>
+					<li class="hot-goods"><a href="#">避孕套</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 	全球购标题 -->
+	<div class="nav-global">
+		<div class="nav-global-title">
+			<div class="dt">
+				<i></i>
+				<span>全球售</span>
+			</div>
+		</div>
+		<ul>
+			<li><a href="#">特色馆</a></li>
+			<li><a href="#">品牌馆</a></li>
+			<li><a href="#">男人帮</a></li>
+			<li><a href="#">新人指南</a></li>
+		</ul>
+	</div>
+
+	<!-- 	banner和导航 -->
+	<div class="bg-banner">
+		<div class="w">
+			<nav class="main-nav">
+				<div class="main-banner">
+					<div class="left-nav">
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">家用电器</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												厨房小电
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">电饼档</a>
+												<a href="#">电磁炉</a>
+												<a href="#">电炖锅</a>
+												<a href="#">电饭煲</a>
+												<a href="#">电水壶</a>
+												<a href="#">电压力锅</a>
+												<a href="#">多用途锅</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												个护健康
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">按摩器</a>
+												<a href="#">电吹风</a>
+												<a href="#">电子秤</a>
+												<a href="#">洁面仪</a>
+												<a href="#">卷/直发器</a>
+												<a href="#">口腔护理</a>
+												<a href="#">理发器</a>
+												<a href="#">美容仪</a>
+												<a href="#">脱毛器</a>
+												<a href="#">剃须刀</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item3">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												生活电器
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">扫地机器人</a>
+												<a href="#">净水器</a>
+												<a href="#">电风扇</a>
+												<a href="#">加湿器</a>
+												<a href="#">吸尘器</a>
+												<a href="#">收录/音机</a>
+												<a href="#">净化器</a>
+												<a href="#">电话机</a>
+												<a href="#">生活电器配件</a>
+												<a href="#">其他生活电器</a>
+												<a href="#">迷你音箱</a>
+												<a href="#">家电配件</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">手机通讯</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												手机通讯
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">手机</a>
+												<a href="#">对讲机</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												手机品牌
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">华为</a>
+												<a href="#">小米</a>
+												<a href="#">OPPO</a>
+												<a href="#">荣耀</a>
+												<a href="#">锤子</a>
+												<a href="#">360</a>
+												<a href="#">魅族</a>
+												<a href="#">VIVO</a>
+												<a href="#">美图</a>
+												<a href="#">金立</a>
+												<a href="#">酷派</a>
+												<a href="#">中兴</a>
+												<a href="#">黑莓</a>
+												<a href="#">努比亚</a>
+												<a href="#">摩托罗拉</a>
+												<a href="#">三星</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item3">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												手机配件
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">手机壳</a>
+												<a href="#">贴膜</a>
+												<a href="#">存储卡</a>
+												<a href="#">数据线</a>
+												<a href="#">充电器</a>
+												<a href="#">创意配件</a>
+												<a href="#">手机饰品</a>
+												<a href="#">苹果周边</a>
+												<a href="#">蓝牙耳机</a>
+												<a href="#">手机支架</a>
+												<a href="#">车载配件</a>
+												<a href="#">拍照配件</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item4">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												配件品牌
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">洛克</a>
+												<a href="#">倍思</a>
+												<a href="#">绿联</a>
+												<a href="#">旅居能</a>
+												<a href="#">莫斯奇</a>
+												<a href="#">图拉斯</a>
+												<a href="#">酷波</a>
+												<a href="#">异色</a>
+												<a href="#">公牛</a>
+												<a href="#">美衣</a>
+												<a href="#">莫凡</a>
+												<a href="#">插画师</a>
+												<a href="#">异色</a>
+												<a href="#">公牛</a>
+												<a href="#">峰亦</a>
+												<a href="#">莫凡</a>
+												<a href="#">圣地微</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">数码影音</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												智能设备
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">VR眼镜</a>
+												<a href="#">智能手环</a>
+												<a href="#">智能机器人</a>
+												<a href="#">健康监测</a>
+												<a href="#">其他配件</a>
+												
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												影音娱乐
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">耳机/耳麦</a>
+												<a href="#">音响</a>
+												<a href="#">便携/无线音箱</a>
+												<a href="#">收音机</a>
+												<a href="#">麦克风</a>
+												<a href="#">专业音频</a>
+												<a href="#">存储卡</a>
+												<a href="#">三脚架/云台</a>
+												<a href="#">相机包</a>
+												<a href="#">滤镜</a>
+												<a href="#">闪光灯</a>
+												<a href="#">贴膜</a>
+												<a href="#">机身附件</a>
+												<a href="#">滤镜</a>
+												<a href="#">存储卡</a>
+
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item3">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												摄影摄像
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">数码相机</a>
+												<a href="#">微单相机</a>
+												<a href="#">拍立得</a>
+												<a href="#">运动相机</a>
+												<a href="#">摄像机</a>
+												<a href="#">镜头</a>
+												<a href="#">影棚器材</a>
+												<a href="#">数码相框</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item4">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												电子教育
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">学生平板</a>
+												<a href="#">早教益智</a>
+												<a href="#">录音笔</a>
+												<a href="#">电子词典</a>
+												<a href="#">复读机</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item5">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												精选卖家
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">吐逊旗舰店</a>
+												<a href="#">莫浪旗舰店</a>
+												<a href="#">博斯尼数码专营店</a>
+												<a href="#">加号专营店</a>
+												<a href="#">欣赏数码专营店</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">电脑办公</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												办公设备
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">投影机</a>
+												<a href="#">投影配件</a>
+												<a href="#">扫面设备</a>
+												<a href="#">碎纸机</a>
+												<a href="#">电水壶</a>
+												<a href="#">电压力锅</a>
+												<a href="#">安防监控</a>
+												<a href="#">保险柜</a>
+												<a href="#">收银机</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												电脑整机
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">平板电脑</a>
+												<a href="#">平板电脑配件</a>
+												<a href="#">台式机</a>
+												<a href="#">一体机</a>
+												<a href="#">笔记本配件</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item3">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												外设产品
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">鼠标</a>
+												<a href="#">键盘</a>
+												<a href="#">网络仪表器</a>
+												<a href="#">U盘</a>
+												<a href="#">移动硬盘</a>
+												<a href="#">鼠标垫</a>
+												<a href="#">摄像头</a>
+												<a href="#">线缆</a>
+												<a href="#">手写板</a>
+												<a href="#">硬盘盒</a>
+												<a href="#">电脑工具</a>
+												<a href="#">插座</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item4">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												网络产品
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">路由器</a>
+												<a href="#">网络盒子</a>
+												<a href="#">交换机</a>
+												<a href="#">网卡</a>
+												<a href="#">网络配件</a>
+
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item5">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												游戏设备
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">游戏机</a>
+												<a href="#">游戏耳机</a>
+												<a href="#">网络仪表器</a>
+												<a href="#">手柄/方向盘</a>
+												<a href="#">游戏周边</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">居家生活/家装建材</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												家纺
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">沙发垫</a>
+												<a href="#">床品套件</a>
+												<a href="#">辈子</a>
+												<a href="#">毛巾浴巾</a>
+												<a href="#">凉席</a>
+												<a href="#">地毯</a>
+												<a href="#">多用途锅</a>
+												<a href="#">毯子</a>
+												<a href="#">文章</a>
+												<a href="#">被套</a>
+												<a href="#">枕巾</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												厨房用具
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">烹饪锅具</a>
+												<a href="#">刀剑菜板</a>
+												<a href="#">厨房配件</a>
+												<a href="#">水具酒具</a>
+												<a href="#">餐具</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item3">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												生活日用
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">雨伞雨具</a>
+												<a href="#">浴室用品</a>
+												<a href="#">净化除味</a>
+												<a href="#">洗晒/熨烫</a>
+												<a href="#">缝纫</a>
+												<a href="#">收纳箱</a>
+												<a href="#">收纳架</a>
+												<a href="#">收纳柜</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item4">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												厨房卫浴
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">龙头</a>
+												<a href="#">淋浴花洒</a>
+												<a href="#">厨卫挂件</a>
+												<a href="#">浴霸</a>
+												<a href="#">垃圾处理器</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item5">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												灯饰照明
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">手电</a>
+												<a href="#">吸顶灯</a>
+												<a href="#">吊灯</a>
+												<a href="#">台灯</a>
+												<a href="#">筒灯</a>
+												<a href="#">装饰灯</a>
+												<a href="#">氛围照明</a>
+												<a href="#">落地灯</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item6">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												家居
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">衣柜</a>
+												<a href="#">边桌</a>
+												<a href="#">餐桌</a>
+												<a href="#">电脑椅</a>
+												<a href="#">鞋架/衣帽架</a>
+												<a href="#">晾衣架</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">男鞋/女鞋/童装/内衣</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												男装
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">POLO衫</a>
+												<a href="#">体恤</a>
+												<a href="#">衬衫</a>
+												<a href="#">短裤</a>
+												<a href="#">风衣</a>
+												<a href="#">夹克</a>
+												<a href="#">马甲</a>
+												<a href="#">牛仔裤</a>
+												<a href="#">风衣</a>
+												<a href="#">西裤</a>
+												<a href="#">闲闲裤</a>
+												<a href="#">羊毛衫</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												女装
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">半身裙</a>
+												<a href="#">衬衫</a>
+												<a href="#">打底裤</a>
+												<a href="#">打底衫</a>
+												<a href="#">大码女装</a>
+												<a href="#">吊带</a>
+												<a href="#">短裤</a>
+												<a href="#">短外套</a>
+												<a href="#">风衣</a>
+												<a href="#">婚纱</a>
+												<a href="#">连衣裙</a>
+												<a href="#">马甲</a>
+												<a href="#">贸易</a>
+												<a href="#">婚纱</a>
+												<a href="#">针织衫</a>
+												<a href="#">连衣裙</a>
+												<a href="#">唯一</a>
+												<a href="#">小西装</a>
+												<a href="#">羽绒服</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item3">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												童装
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">礼服</a>
+												<a href="#">运动服</a>
+												<a href="#">裤子</a>
+												<a href="#">凉鞋</a>
+												<a href="#">内衣裤</a>
+												<a href="#">皮鞋</a>
+												<a href="#">亲子装</a>
+												<a href="#">裙子</a>
+												<a href="#">套装</a>
+												<a href="#">学子</a>
+												<a href="#">运动鞋</a>
+												<a href="#">羽绒服</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item4">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												内衣
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">男士内裤</a>
+												<a href="#">女士内裤</a>
+												<a href="#">保暖内衣</a>
+												<a href="#">打底裤袜</a>
+												<a href="#">打底衫</a>
+												<a href="#">文胸</a>
+												<a href="#">美腿袜</a>
+												<a href="#">塑身美体</a>
+												<a href="#">文胸套装</a>
+												<a href="#">泳衣</a>
+												<a href="#">休闲棉袜</a>
+												<a href="#">商务男袜</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">男鞋/女鞋</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												流行男鞋
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">传统不屑</a>
+												<a href="#">帆布鞋</a>
+												<a href="#">工装鞋</a>
+												<a href="#">功能鞋</a>
+												<a href="#">凉鞋</a>
+												<a href="#">妥协</a>
+												<a href="#">休闲鞋</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												时尚女鞋
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">布鞋</a>
+												<a href="#">帆布鞋</a>
+												<a href="#">防水台</a>
+												<a href="#">休闲鞋</a>
+												<a href="#">雪地靴</a>
+												<a href="#">鱼嘴鞋</a>
+												<a href="#">松糕鞋</a>
+												<a href="#">雪地靴</a>
+												<a href="#">马丁靴</a>
+												<a href="#">内增高</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item3">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												钟表
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">德彪</a>
+												<a href="#">挂钟</a>
+												<a href="#">国标</a>
+												<a href="#">闹钟</a>
+												<a href="#">欧美表</a>
+												<a href="#">日韩表</a>
+												<a href="#">瑞表</a>
+												<a href="#">钟表配件</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">运动户外</a></div>
+								<div class="item_body">
+									<div class="item_body_wrapper clearfix">
+										<ul class="globalsales_nav_sub">
+											<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+												<div class="globalsales_nav_sub_title"><a href="#">
+													户外鞋服
+													<i></i>
+												</a></div>
+												<div class="globalsales_nav_sub_main clearfix">
+													<a href="#">冲锋衣裤</a>
+													<a href="#">登山鞋</a>
+													<a href="#">工装鞋</a>
+													<a href="#">功能内衣</a>
+													<a href="#">护卫风衣</a>
+													<a href="#">户外哇</a>
+													<a href="#">军迷服饰</a>
+												</div>
+											</li>
+											<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+												<div class="globalsales_nav_sub_title"><a href="#">
+													户外装备
+													<i></i>
+												</a></div>
+												<div class="globalsales_nav_sub_main clearfix">
+													<a href="#">背包</a>
+													<a href="#">登山攀岩</a>
+													<a href="#">户外工具</a>
+													<a href="#">户外配饰</a>
+													<a href="#">户外仪表</a>
+													<a href="#">户外照明</a>
+													<a href="#">军迷用品</a>
+													<a href="#">旅行装备</a>
+													<a href="#">烧烤用具</a>
+													<a href="#">剃须刀</a>
+												</div>
+											</li>
+											<li class="globalsales_nav_sub_item globalsales_nav_sub_item3">
+												<div class="globalsales_nav_sub_title"><a href="#">
+													健身训练
+													<i></i>
+												</a></div>
+												<div class="globalsales_nav_sub_main clearfix">
+													<a href="#">拉力器</a>
+													<a href="#">跳绳</a>
+													<a href="#">电风扇</a>
+													<a href="#">哑铃</a>
+													<a href="#">鱼胶应聘</a>
+													<a href="#">收录/音机</a>
+													<a href="#">运动护具</a>
+												</div>
+											</li>
+											<li class="globalsales_nav_sub_item globalsales_nav_sub_item4">
+												<div class="globalsales_nav_sub_title"><a href="#">
+													游泳用品
+													<i></i>
+												</a></div>
+												<div class="globalsales_nav_sub_main clearfix">
+													<a href="#">男士泳衣</a>
+													<a href="#">女士泳衣</a>
+													<a href="#">泳镜</a>
+													<a href="#">泳帽</a>
+													<a href="#">游泳配件</a>
+													<a href="#">游泳圈</a>
+													<a href="#">拥右抱</a>
+												</div>
+											</li>
+										</ul>
+										<div class="globalsales_nav_recommend">
+											<a href="#"><img src="./img/nav-img1.png"></a>
+											<a href="#"><img src="./img/nav-img2.png"></a>
+											<a href="#"><img src="./img/nav-img3.png"></a>
+											<a href="#"><img src="./img/nav-img4.png"></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">汽车用品</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												安全自驾
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">充气泵</a>
+												<a href="#">胎压监测</a>
+												<a href="#">应急救援</a>
+												<a href="#">自家野营</a>
+												<a href="#">摩托车装备</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												车载电器
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">行车记录仪</a>
+												<a href="#">车载蓝牙</a>
+												<a href="#">车载电子秤</a>
+												<a href="#">车载洁面仪</a>
+												<a href="#">导航仪</a>
+												<a href="#">车载影音</a>
+												<a href="#">车载理发器</a>
+												<a href="#">车载吸尘器</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item3">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												美容清洗
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">洗车毛巾</a>
+												<a href="#">洗车机</a>
+												<a href="#">洗车水枪</a>
+												<a href="#">补漆笔</a>
+												<a href="#">洗车配件</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item4">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												汽车装饰
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">座垫</a>
+												<a href="#">座套</a>
+												<a href="#">投靠</a>
+												<a href="#">方向盘套</a>
+												<a href="#">后备箱套</a>
+												<a href="#">车衣</a>
+												<a href="#">功能小贱</a>
+												<a href="#">车身装饰件</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">母婴/玩具乐器</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												喂养用品
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">儿童餐具</a>
+												<a href="#">辅食料理机</a>
+												<a href="#">奶品奶嘴</a>
+												<a href="#">暖奶消毒</a>
+												<a href="#">水壶/水杯</a>
+												<a href="#">暖奶器</a>
+												<a href="#">牙胶安抚</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												母婴用品
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">理发器</a>
+												<a href="#">日常护理</a>
+												<a href="#">洗澡用具</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item3">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												玩具
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">创意减压</a>
+												<a href="#">动漫玩具</a>
+												<a href="#">绘画</a>
+												<a href="#">积木</a>
+												<a href="#">健身玩具</a>
+												<a href="#">毛绒布艺</a>
+												<a href="#">模型玩具</a>
+												<a href="#">娃娃玩具</a>
+												<a href="#">遥控</a>
+												<a href="#">益智玩具</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">礼品箱包</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												精品箱包
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">男士钱包</a>
+												<a href="#">男士手包</a>
+												<a href="#">上午公文包</a>
+												<a href="#">双肩包</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												功能箱包
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">登山包</a>
+												<a href="#">电脑包</a>
+												<a href="#">拉杆箱</a>
+												<a href="#">旅行包</a>
+												<a href="#">旅行配件</a>
+												<a href="#">妈咪包</a>
+												<a href="#">书包</a>
+												<a href="#">相机包</a>
+												<a href="#">休闲运动包</a>
+												<a href="#">腰包</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">医药保健</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												保健器械
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">养生器械</a>
+												<a href="#">家庭护理</a>
+												<a href="#">血糖仪</a>
+												<a href="#">血压计</a>
+												<a href="#">体温计</a>
+												<a href="#">雾化器</a>
+												<a href="#">理疗器</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												计生情趣
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">飞机杯</a>
+												<a href="#">倒模</a>
+												<a href="#">避孕套</a>
+												<a href="#">情趣内衣</a>
+												<a href="#">震动棒</a>
+												<a href="#">挑担</a>
+												<a href="#">仿真阳具</a>
+												<a href="#">排卵眼晕</a>
+												<a href="#">其他情趣用品</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-header">
+								<div class="icons-arrow"></div>
+								<div class="header-title"><a href="#">图书</a></div>
+							</div>
+							<div class="item_body">
+								<div class="item_body_wrapper clearfix">
+									<ul class="globalsales_nav_sub">
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item1">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												文学小说
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">文学</a>
+												<a href="#">小说</a>
+												<a href="#">励志与成功</a>
+												<a href="#">专辑</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item2">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												学习书籍
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">医学</a>
+												<a href="#">计算机与互联网</a>
+												<a href="#">书法</a>
+												<a href="#">建筑</a>
+												<a href="#">外语学习</a>
+											</div>
+										</li>
+										<li class="globalsales_nav_sub_item globalsales_nav_sub_item3">
+											<div class="globalsales_nav_sub_title"><a href="#">
+												社会科学
+												<i></i>
+											</a></div>
+											<div class="globalsales_nav_sub_main clearfix">
+												<a href="#">国学/古籍</a>
+												<a href="#">科学与自然</a>
+												<a href="#">历史</a>
+												<a href="#">文化</a>
+												<a href="#">社会科学</a>
+											</div>
+										</li>
+									</ul>
+									<div class="globalsales_nav_recommend">
+										<a href="#"><img src="./img/nav-img1.png"></a>
+										<a href="#"><img src="./img/nav-img2.png"></a>
+										<a href="#"><img src="./img/nav-img3.png"></a>
+										<a href="#"><img src="./img/nav-img4.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="slide-banner">
+			<ul class="sb-wrap">
+				<li class="banner-img current"><a href="#"><img src="./img/banner/banner1.png" class="banner-site" ></a></li>
+				<li class="banner-img"><a href="#"><img src="./img/banner/banner2.png" class="banner-site" ></a></li>
+				<li class="banner-img"><a href="#"><img src="./img/banner/banner3.png" class="banner-site" ></a></li>
+				<li class="banner-img"><a href="#"><img src="./img/banner/banner4.png" class="banner-site" ></a></li>
+				<li class="banner-img"><a href="#"><img src="./img/banner/banner5.png" class="banner-site" ></a></li>
+			</ul>
+			<ul class="sb-nav">
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li class="last-item"></li>
+			</ul>
+			<div class="sb-btn">
+				<a href="javascript:void(0);" class="page-prev"></a>
+				<a href="javascript:void(0);" class="page-next"></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 购物区 -->
+	<section class="main">
+		<!-- 	秒杀 -->
+		<div class="seckill w">
+			<div class="seckill-title">
+				<div></div>
+			</div>
+			<div class="seckill-goods">
+				<div class="seckill-slide">
+					<a href="#"><div class="seckill-hot">
+						<div class="s-name">美的（Midea）M1-L213C 快捷微波炉 微电脑操控 360°转盘加热 智能蒸煮菜单 21升</div>
+						<div class="s-price">
+							<em><span>¥</span>349.00</em>
+							<p>¥ 799.00</p>
+						</div>
+						<div class="s-line"></div>
+						<div class="s-arrow"></div>
+						<div class="s-img">
+							<img src="./img/seckill/seckill1.jpg">	
+						</div>
+					</div></a>
+					<a href="#"><div class="seckill-hot">
+						<div class="s-name">金号 毛巾家纺 纯棉提缎加厚加重面巾 四条装 深蓝/浅蓝/深紫/浅紫 105g/条 70*34cm</div>
+						<div class="s-price">
+							<em><span>¥</span>29.90</em>
+							<p>¥ 69.00</p>
+						</div>
+						<div class="s-line"></div>
+						<div class="s-arrow"></div>
+						<div class="s-img">
+							<img src="./img/seckill/seckill2.jpg">	
+						</div>
+					</div></a>
+					<a href="#"><div class="seckill-hot">
+						<div class="s-name">尤尼克斯YONEX羽毛球拍单拍双刃全碳素DUO-ZS 黑白 未穿线</div>
+						<div class="s-price">
+							<em><span>¥</span>999.00</em>
+							<p>¥ 1399.00</p>
+						</div>
+						<div class="s-line"></div>
+						<div class="s-arrow"></div>
+						<div class="s-img">
+							<img src="./img/seckill/seckill3.jpg">	
+						</div>
+					</div></a>
+				</div>
+				<ul class="seckill-item">
+					<li class="seckill-dot1"></li>
+				</ul>
+				<div class="seckill-btn">
+					<a href="#" class="page-prev"></a>
+					<a href="#" class="page-next"></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- 	特色频道 -->
+		<div class="spec-channal w">
+			<div class="spec-title">
+				<div>特色频道</div>
+			</div>
+			<ul class="spec-goods">
+				<li class="item">
+					<a href="#"></a>
+				</li>
+				<li class="item">
+					<a href="#"></a>
+				</li>
+				<li class="item">
+					<a href="#"></a>
+				</li>
+				<li class="item">
+					<a href="#"></a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- 	热卖推荐-->
+		<div class="hot-rec w">
+			<div class="hot-title">
+				<div>热卖推荐</div>
+			</div>
+			<div class="hot-goods">
+				<ul class="item-list">
+					<li class="item current">
+						<a href="#"><img src="./img/hot/hot1.png"></a>
+					</li>
+					<li class="item">
+						<a href="#"><img src="./img/hot/hot2.png"></a>
+					</li>
+					<li class="item">
+						<a href="#"><img src="./img/hot/hot3.png"></a>
+					</li>
+					<li class="item">
+						<a href="#"><img src="./img/hot/hot4.png"></a>
+					</li>
+					<li class="item">
+						<a href="#"><img src="./img/hot/hot5.png"></a>
+					</li>
+					<li class="item">
+						<a href="#"><img src="./img/hot/hot6.png"></a>
+					</li>
+				</ul>
+				<ul class="item-dot">
+					<li class="nav-dot current"></li>
+					<li class="nav-dot"></li>
+					<li class="nav-dot"></li>
+					<li class="nav-dot"></li>
+					<li class="nav-dot"></li>
+					<li class="nav-dot"></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 	新品上市 -->
+		<div class="n-con">
+			<div class="new-goods w">
+				<ul class="list-item">
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="./img/new/new1.png">
+						</div>
+						<div class="n-mask"></div>
+						<div class="n-name">【香氛仪套装】糖果手机 SOAP R11 3G+32G 香槟金 全面屏 移动联通电信4G手机</div>
+						<div class="n-price">¥969.00</div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="./img/new/new2.png">
+						</div>
+						<div class="n-mask"></div>
+						<div class="n-name">【内购】vivo Y67 全网通 4GB+64GB 香槟金 移动联通电信4G手机 双卡双待</div>
+						<div class="n-price">¥1998.00</div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="./img/new/new3.png">
+						</div>
+						<div class="n-mask"></div>
+						<div class="n-name">OPPO A77 4GB+64GB内存版 金色 全网通4G手机 双卡双待</div>
+						<div class="n-price">¥2199.00</div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="./img/new/new4.png">
+						</div>
+						<div class="n-mask"></div>
+						<div class="n-name">【内购】vivo Y67 全网通 4GB+32GB 玫瑰金 移动联通电信4G手机 双卡双待</div>
+						<div class="n-price">¥1798.00</div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="./img/new/new5.png">
+						</div>
+						<div class="n-mask"></div>
+						<div class="n-name">vivo Y66 3GB+32GB 磨砂黑 + 电视果3 爱奇艺智能网络电视机顶盒第三代 曜石黑</div>
+						<div class="n-price">暂无报价</div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="./img/new/new1.png">
+						</div>
+						<div class="n-name"></div>
+						<div class="n-price"></div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="">
+						</div>
+						<div class="n-name"></div>
+						<div class="n-price"></div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="">
+						</div>
+						<div class="n-name"></div>
+						<div class="n-price"></div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="">
+						</div>
+						<div class="n-name"></div>
+						<div class="n-price"></div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="">
+						</div>
+						<div class="n-name"></div>
+						<div class="n-price"></div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="">
+						</div>
+						<div class="n-name"></div>
+						<div class="n-price"></div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="">
+						</div>
+						<div class="n-name"></div>
+						<div class="n-price"></div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="">
+						</div>
+						<div class="n-name"></div>
+						<div class="n-price"></div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="">
+						</div>
+						<div class="n-name"></div>
+						<div class="n-price"></div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="n-wrap">
+							<img src="">
+						</div>
+						<div class="n-name"></div>
+						<div class="n-price"></div>
+					</a></li>
+				</ul>
+				<div class="tab-page">
+					<a href="#" class="page-prev"></a>
+					<a href="#" class="page-next"></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- 更多商品 -->
+		<div class="m-wrap">
+			<div class="w">
+				<div class="m-title">
+					<div class="mt">
+						<h3>
+							<i>MORE</i>
+							<em>更多商品</em>
+						</h3>
+						<ul class="m-nav">
+							<li class="m-nav-item">手机通讯</li>
+							<li class="m-nav-item">数码影音</li>
+							<li class="m-nav-item">家用电器</li>
+							<li class="m-nav-item">电脑办公</li>
+							<li class="m-nav-item">运动户外</li>
+							<li class="m-nav-item">家居家装</li>
+							<li class="m-nav-item">礼品箱包</li>
+							<li class="m-nav-item">服饰内衣</li>
+							<li class="nav-line"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="m-content">
+					<ul class="m-goods">
+						<li class="m-item"><a href="">
+							<img  class="n-img" src="./img/more/more1.png">
+							<div class="n-name">荣耀8青春版 全网通 标配版 3GB+32GB 幻海蓝</div>
+							<div class="n-price">¥1099.00</div>
+						</a></li>
+						<li class="m-item"><a href="">
+							<img  class="n-img" src="./img/more/more2.png">
+							<div class="n-name">魅族 魅蓝Note5 全网通公开版 3GB+32GB 月光银 移动联通电信4G手机 双卡双待</div>
+							<div class="n-price">¥1049.00</div>
+						</a></li>
+						<li class="m-item"><a href="">
+							<img  class="n-img" src="./img/more/more3.png">
+							<div class="n-name">荣耀 畅玩6X 4GB 32GB 全网通4G手机 高配版 铂光金</div>
+							<div class="n-price">¥1299.00</div>
+						</a></li>
+						<li class="m-item"><a href="">
+							<img  class="n-img" src="./img/more/more4.png">
+							<div class="n-name">OPPO A57 3GB+32GB内存版 玫瑰金色 全网通4G手机 双卡双待</div>
+							<div class="n-price">¥1399.00</div>
+						</a></li>
+						<li class="m-item"><a href="">
+							<img  class="n-img" src="./img/more/more5.png">
+							<div class="n-name">小米Max2 全网通 4GB+64GB 金色 移动联通电信4G手机 双卡双待</div>
+							<div class="n-price">¥1699.00</div>
+						</a></li>
+						<li class="m-item"><a href="">
+							<img  class="n-img" src="./img/more/more6.png">
+							<div class="n-name">小米Max2 全网通 4GB+64GB 金色 移动联通电信4G手机 双卡双待</div>
+							<div class="n-price">¥1699.00</div>
+						</a></li>
+						<li class="m-item"><a href="">
+							<img  class="n-img" src="./img/more/more7.png">
+							<div class="n-name">小米Max2 全网通 4GB+64GB 金色 移动联通电信4G手机 双卡双待</div>
+							<div class="n-price">¥1699.00</div>
+						</a></li>
+						<li class="m-item"><a href="">
+							<img  class="n-img" src="./img/more/more8.png">
+							<div class="n-name">小米Max2 全网通 4GB+64GB 金色 移动联通电信4G手机 双卡双待</div>
+							<div class="n-price">¥1699.00</div>
+						</a></li>
+						<li class="m-item"><a href="">
+							<img  class="n-img" src="./img/more/more9.png">
+							<div class="n-name">小米Max2 全网通 4GB+64GB 金色 移动联通电信4G手机 双卡双待</div>
+							<div class="n-price">¥1699.00</div>
+						</a></li>
+						<li class="m-item"><a href="">
+							<img  class="n-img" src="./img/more/more10.png">
+							<div class="n-name">小米Max2 全网通 4GB+64GB 金色 移动联通电信4G手机 双卡双待</div>
+							<div class="n-price">¥1699.00</div>
+						</a></li>
+						<li class="clr"></li>
+						<li class="m-btn">MORE</li>
+					</ul>
+				</div>
+				<div class="end-banner w"><a href="#"><img src="./img/end-banner.png"></a></div>
+			</div>
+		</div>
+	</section>
+	<!-- 	侧边栏 -->
+	<aside class="side-bar">
+		<ul class="side-bar-list">
+			<li class="side-block"><a href="#"><span>京东秒杀</span></a></li>
+			<li class="side-block"><a href="#"><span>特色频道</span></a></li>
+			<li class="side-block"><a href="#"><span>热卖推荐</span></a></li>
+			<li class="side-block"><a href="#"><span>更多商品</span></a></li>
+			<li class="side-block top"><a href="#"><span>TOP</span></a></li>
+		</ul>
+		<div class="service">
+			<a href="#"></a>
+		</div>
+	</aside>
+	<!-- 	底部信息 -->	
+	<footer>
+		<div class="nav-bottom">
+
+		</div>
+	</footer>
+	<script type="text/javascript" src="../../scripts/jdmall_top_slide_banner.js"></script>
+	<script type="text/javascript" src="../../scripts/jdmall_mid_slide_banner.js"></script>
+</body>
+</html>

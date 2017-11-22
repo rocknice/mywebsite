@@ -63,6 +63,39 @@ const indexController = {
 				});
 			}
 		};
+	},
+	work_3d() {
+		return async (ctx, next) => {
+			//表示此函数里有异步的请求	
+			ctx.body = await ctx.render('my_work_3d', {
+				title: '3d全景图'
+			});
+		};
+	},
+	jdmall() {
+		return async (ctx, next) => {
+			//表示此函数里有异步的请求	
+			ctx.body = await ctx.render('jdmall', {
+				title: '京东全球购'
+			});
+		};
+	},
+	game2048() {
+		return async (ctx, next) => {
+			//表示此函数里有异步的请求	
+			ctx.body = await ctx.render('game2048', {
+				title: '2048游戏'
+			});
+		};
+	},
+	chatonline() {
+		return async (ctx, next) => {
+			//表示此函数里有异步的请求	
+			ctx.body = await ctx.render('my_work_chatonline', {
+				title: 'chat-online'
+			});
+		};
 	}
+
 };
 exports.default = indexController;
