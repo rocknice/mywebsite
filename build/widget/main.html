@@ -1,5 +1,7 @@
 <style type="text/css">
-	#main{
+	#main1{
+		margin: 0 auto;
+		width: 1280px;
 		position: relative;
 		top:100px;
 		height: 500px;
@@ -19,9 +21,9 @@ background-image: url(./assets/img/more/more1.png);*/
 			box-shadow: -8px -8px 80px -8px #873940 inset;*/
 		}
 	</style>
-	<article id="main">
+	<section id="main1">
 		<canvas id="canvasParticle">Canvas is not supported in your brower.</canvas>
-	</article>
+	</section>
 	<script type="text/javascript">
 		var Pjax_Main = {
 			init() {
@@ -139,7 +141,7 @@ background-image: url(./assets/img/more/more1.png);*/
 					logos.push(logo);
 					fragment.appendChild(logo); //如果直接往body里添加节点，浏览器每次都会重新渲染。
 				}
-				document.getElementById('main').appendChild(fragment); //放入document
+				document.getElementById('main1').appendChild(fragment); //放入document
 			}
 			//让每个图标向上移动
 			function move() {
@@ -171,7 +173,7 @@ background-image: url(./assets/img/more/more1.png);*/
 				newlogo.style.backgroundSize = '35% 35%';
 				newlogo.speed = ~~Math.random() + 2;
 				logos.push(newlogo);
-				document.getElementById('main').appendChild(newlogo);
+				document.getElementById('main1').appendChild(newlogo);
 				console.log(logos.length)
 			}
 		}
