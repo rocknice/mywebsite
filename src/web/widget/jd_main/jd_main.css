@@ -1,0 +1,175 @@
+		#main{
+			margin: 0 auto;
+			width: 1200px;
+			position: relative;
+			top:100px;
+			background-color: #222;
+			overflow: hidden;
+			padding-bottom: 30px;
+		}
+		#myJD{
+			margin-top: 10px;
+			float:left;
+			width: 90rem;
+			font-size: 1.6rem;
+		}
+		#myJD-side{
+			position: absolute;
+			right:0;
+			font-size: 1.6rem;
+			float: right;
+			height: 400px;
+			width: 205px;
+			border: 1px solid #444343;
+			border-radius: 20px;
+			margin-top: 24px;
+		}
+		.about-wrap,.description-wrap,.skill-wrap{
+			border: 1px solid #444343;
+		}
+		.co-wrap--style{
+			float:left;
+			border-radius: 20px;
+			margin-top:14px;
+			padding-bottom: 20px;
+			width: 901px;
+			overflow: hidden;
+		}
+		.about-wrap{
+			height: 400px;
+		}
+		.description-wrap{
+			height: 100%;
+		}
+		.skill-wrap{
+			height: 100%;
+		}
+		.skill-more{
+			line-height: 2.4rem; 
+		}
+		.main-front{
+			margin-top: 24px;
+			margin-left: 28px;
+			width: 5px;
+			height: 24px;
+			background-color: brown;
+			float: left;
+		}
+		.co--style{
+/*	-webkit-filter: grayscale(100%);  
+filter: grayscale(100%);*/
+/*	background: -webkit-gradient(linear,center top,center bottom,from(yellow), to(#000));*/
+overflow: hidden; 
+white-space: nowrap; 
+text-overflow: clip;
+font-size: 2.0rem;
+margin-top: 22px;
+margin-left: 45px;
+animation: comout 4s linear 1;
+width: 400px;
+}
+@keyframes comout{
+	0%{
+		width: 0;
+	}
+	100%{
+		width: 400px;
+	}
+}
+.co-more--style{
+	margin-top: 15px;
+	margin-left: 25px;
+	width: 840px;
+}
+.about-more1{
+	float: left;
+	margin-top: 46px;
+	margin-left: 15px;
+	width: 335px;
+	height: 250px;
+	border-right: 1px solid #444343;
+}
+.about-more2{
+	float: left;
+	margin-top: 35px;
+	margin-left: 25px;
+	width: 460px;
+	height: 275px;
+}
+.about-line1{
+	margin-left: 21px;
+	margin-top: 13px;
+	height: 1px;
+	width: 852px;
+	background-color: #444343;
+}
+.about-more1_photo{
+	box-shadow: 0 0 16px -7px #fff;
+	text-align: center;
+	margin: 35px auto;
+	height: 160px;
+	width: 160px;
+	border-radius: 80px;
+	background: url(../../img/h-img.jpg) -29px -2px no-repeat;
+	background-size: 154%;
+}
+.about-more2--common{
+	letter-spacing: 0.06rem;
+	height: 24px;
+	margin: 9px 0 21px 58px;
+	position: relative;
+}
+
+/*.about-more2--common:before{
+	display: block;
+	width: 27px;
+	height: 27px;
+	background-color: red;
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: -54px;
+	}*/
+	.iconcommon{
+		font-size: 2.2rem;
+		padding-right: 45px;
+	}
+	.about-wrap:hover .about{
+		-webkit-filter: brightness(200%); 
+		filter: brightness(200%);
+	}
+	.description-wrap:hover .description{
+		-webkit-filter: brightness(200%); 
+		filter: brightness(200%);
+	}
+	.skill-wrap:hover .skill{
+		-webkit-filter: brightness(200%); 
+		filter: brightness(200%);
+	}
+	.description-text{
+		letter-spacing:0.13rem;
+		line-height: 2.6rem;
+		text-indent: 3rem;
+	}
+	.side_line{
+		margin-left: 0px;
+		margin-top: 18px;
+		height: 1px;
+		width: 205px;
+		background-color: #444343;
+	}
+	.side_title{
+		margin:19px auto;
+		text-align: center;
+		font-size: 1.8rem;
+	}
+	.side_link{
+		letter-spacing: 0.06rem;
+		margin-top: 15px;
+		margin: 15px 15px 0 15px;
+	}
+	.side_link a:hover{
+		-webkit-filter: brightness(200%); 
+		filter: brightness(200%);
+	}
+

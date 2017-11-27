@@ -1,0 +1,21 @@
+		#main1{
+			margin: 0 auto;
+			width: 1280px;
+			position: relative;
+			top:100px;
+			height: 500px;
+			background-color: #222;
+			overflow: hidden;
+/*			-webkit-perspective:30rem;
+-webkit-perspective-origin: 50% 2%;*/
+}
+.logo{
+	position: absolute;
+	width: 160px;
+	height: 160px;
+/*			background-color: #faf9f9;
+background-image: url(./assets/img/more/more1.png);*/
+/*			border-radius: 160px 160px 64px 160px;
+			transform: rotate(45deg) translateY(0px);
+			box-shadow: -8px -8px 80px -8px #873940 inset;*/
+		}

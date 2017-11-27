@@ -1,0 +1,21 @@
+html{
+	font-size: 62.5%;
+}
+*{
+	margin: 0;
+	padding:0;
+}
+body{
+
+	background-color: #222;
+	color:#666;
+}
+a{
+	text-decoration: none;
+	color:#666;
+}
+li {
+	display: list-item;
+	list-style: none;
+	text-align: -webkit-match-parent;
+}

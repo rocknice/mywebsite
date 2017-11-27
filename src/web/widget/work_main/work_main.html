@@ -1,0 +1,190 @@
+<style type="text/css">
+	#main{
+			width: 1000px;
+			margin: 0 auto;
+			position: relative;
+			top:100px;
+			background: #212121 url("../../img/pattern.png");
+			overflow: hidden;
+			padding-bottom: 30px;
+		}
+		#work{
+/*			width: 1000px;
+margin: 40px 100px;*/
+}
+.work-title{
+	width: 1000px;
+	margin:0 auto;
+	margin-top: 70px;
+	text-align: center;
+	font-size: 3rem;
+}
+.work-title-below{
+	width:1000px;
+	font-family: Cardo, Georgia,"Helvetica Neue";
+	margin:16px auto;
+	text-align: center;
+	font-size: 1.6rem;
+	font-style: italic;
+	letter-spacing: normal;
+}
+.work-content-wrap{
+	width: 1000px;
+	margin:0 auto;
+	margin-top: 10px;
+	overflow: hidden;
+	transition: all ease 0.5s;
+}
+.work-content{
+	width: inherit;
+	margin-top: 20px;
+	overflow: hidden;
+}
+.workcommon{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	border:1px gray solid;
+	margin: 0 20px;
+	margin-top:50px;
+	margin-bottom:25px;
+	text-align: center;
+	line-height: 200px;
+	overflow: hidden;
+}
+.work_link1 img{
+	position: relative;
+	left:-90px;
+}
+.work_link2 img{
+	width: 200px;
+	height: 200px;
+	position: relative;
+	left:0;
+}
+.work_link3 img{
+	width: 220px;
+	height: 220px;
+	position: relative;
+	left:0;
+}
+.work_link4 img{
+	width: 220px;
+	height: 220px;
+	position: relative;
+	left:0;
+}
+.work_link5 img{
+	width: 200px;
+	height: 200px;
+	position: relative;
+	left:0;
+}
+.work_link-description{
+	position: relative;
+	top:5px;
+	font-size: 2.0rem;
+	text-align: center;
+	animation: fadeout ease 0.5s;
+	opacity: 0;
+}
+.translate{
+	margin-top:2px;
+	letter-spacing: 0.055em;
+	text-transform: none;
+	font-style: italic;
+	font-weight: 300;
+	font-family: "Cardo", "Georgia", "Montserrat", "Helvetica Neue", "Helvetica", "Arial", serif;
+}
+.work_link-wrap{
+	float: left;
+	margin:0 45px;
+	transition: all ease 0.5s;
+	opacity: 0.8;
+}
+.work_link-wrap:hover{
+	opacity: 1;
+}
+.work_link-wrap:hover .work_link-description{
+	animation: fadein ease 0.5s;
+	position: relative;
+	opacity: 1;
+	top:0;
+}
+@keyframes mohu{
+	from{
+		top:5px;
+		opacity: 0;
+	}
+	to{
+		top:0;
+		opacity: 1;
+	}
+}
+@keyframes fadein{
+	from{
+		top:5px;
+		opacity: 0;
+	}
+	to{
+		top:0;
+		opacity: 1;
+	}
+}
+@keyframes fadeout{
+	from{
+		top:0;
+		opacity: 1;
+	}
+	to{
+		top:5px;
+		opacity: 0;
+	}
+}
+</style>
+<section id="main">
+	<div id="work">
+		<h2 class="work-title">W O R K S</h2>
+		<p class="work-title-below">A selection of my works and demos...</p>
+		<div class="work-content-wrap">
+			<div class="work-content">	
+				<div class="work_link-wrap"><a href="/index/work/chatonline"><div class="work_link1 workcommon"><img src="../img/chatonline.png" alt="聊天室"></div><p class="work_link-description">聊 天 室</p><p class="work_link-description translate">chat online</p></a></div>
+				<div class="work_link-wrap"><a href="/index/work/3d"><div class="work_link2 workcommon"><img src="../img/3d.jpeg" alt="3D全景图"></div><p class="work_link-description">3 D 全 景 图</p><p class="work_link-description translate">3D picture</p></a></div>
+				<div class="work_link-wrap"><a href="/index/work/jdmall"><div class="work_link3 workcommon"><img src="../img/jd.jpeg" alt="仿京东页面"></div><p class="work_link-description">京 东 页 面</p><p class="work_link-description translate">JD page</p></a></div>
+			</div>
+			<div class="work-content">	
+				<div class="work_link-wrap"><a href="/index/work/game2048"><div class="work_link4 workcommon"><img src="../img/2048.jpg" alt="2048小游戏"></div><p class="work_link-description">2 0 4 8 游 戏</p><p class="work_link-description translate">2048 game</p></a></div>
+				<div class="work_link-wrap"><a href="/index/work/gallery"><div class="work_link5 workcommon"><img src="../img/gallery.jpeg" alt="原生js相册插件"></div><p class="work_link-description">动 感 相 册</p><p class="work_link-description translate">photo gallery</p></a></div>
+				<div class="work_link-wrap"><a href=""><div class="work_link6 workcommon"><img src="../img/gallery.jpeg" alt="敬 请 期 待"></div><p class="work_link-description">敬 请 期 待</p><p class="work_link-description translate">please waiting</p></a></div>
+			</div>
+		</div>
+	</div>
+</section>
+<script type="text/javascript">
+	var Pjax_work_main = {
+		init() {
+			let aim = document.getElementById("main");
+			let topNav = document.getElementById("head");
+			let num = 0;
+		// window.addEventListener("scroll", function() {
+		// 	navFadeOut();
+		// })
+		aim.addEventListener("mousewheel", function(event) {
+			if (event.wheelDelta > 0) {
+				topNav.style.top = 0;
+			} else {
+				topNav.style.top = -100 + "px";
+			}
+		})
+
+		function navFadeOut() {
+			if (aim.getBoundingClientRect().top < 50) {
+				topNav.style.top = -(50 - aim.getBoundingClientRect().top) + "px";
+			} else {
+				topNav.style.top = 0;
+			}
+		}
+	}
+}
+Pjax_work_main.init();
+</script>

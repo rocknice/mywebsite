@@ -1,0 +1,183 @@
+<style type="text/css">
+	#main1{
+		margin: 0 auto;
+		width: 1280px;
+		position: relative;
+		top:100px;
+		height: 500px;
+		background-color: #222;
+		overflow: hidden;
+/*			-webkit-perspective:30rem;
+-webkit-perspective-origin: 50% 2%;*/
+}
+.logo{
+	position: absolute;
+	width: 160px;
+	height: 160px;
+/*			background-color: #faf9f9;
+background-image: url(./assets/img/more/more1.png);*/
+/*			border-radius: 160px 160px 64px 160px;
+			transform: rotate(45deg) translateY(0px);
+			box-shadow: -8px -8px 80px -8px #873940 inset;*/
+		}
+	</style>
+	<section id="main1">
+		<canvas id="canvasParticle">Canvas is not supported in your brower.</canvas>
+	</section>
+	<script type="text/javascript">
+		var Pjax_Main = {
+			init() {
+
+				var oCanvas = document.getElementById('canvasParticle');
+				var cxt = null;
+			//用来存放粒子的素组
+			var particles = {};
+			var particleIndex = 0;
+
+			if (oCanvas.getContext) {
+				cxt = oCanvas.getContext('2d');
+			}
+
+			oCanvas.width = window.innerWidth;
+			oCanvas.height = window.innerHeight;
+
+			function Particle() {
+				particleIndex++;
+
+				particles[particleIndex] = this;
+
+				//粒子放射的中心点
+				this.x = oCanvas.width / 2;
+				this.y = oCanvas.height / 2;
+				//初始化粒子沿X轴和Y轴的速度
+				this.vx = Math.random() * 6 - 3;
+				this.vy = Math.random() * 4 - 2;
+
+				this.growth = (Math.abs(this.vx) + Math.abs(this.vy)) * 0.01; // 根据x/y轴的位置决定大小
+				this.id = particleIndex;
+				this.size = 0;
+				this.color = getRandomColor();
+			};
+
+			Particle.prototype.draw = function() {
+				this.x += this.vx;
+				this.y += this.vy;
+				//根据移动的距离逐渐变大
+				this.size += this.growth;
+
+				if (this.x < 0 || this.x > oCanvas.width || this.y < 0 || this.y > oCanvas.height) {
+					//出界则移除
+					delete particles[this.id];
+				}
+
+				cxt.fillStyle = this.color;
+				cxt.beginPath();
+				cxt.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+				cxt.fill();
+			};
+
+			function animate() {
+				requestAnimationFrame(animate);
+
+				cxt.fillStyle = '#222222';
+				cxt.fillRect(0, 0, oCanvas.width, oCanvas.height);
+				//每次网数组添加一个数据
+				new Particle();
+				//遍历数组，依次画出
+				for (var i in particles) {
+					particles[i].draw();
+				}
+			};
+			//随机颜色方法
+			function getRandomColor() {
+				return '#' + (Math.random() * 0xffffff << 0).toString(16);
+			};
+			requestAnimationFrame(animate);
+		},
+		logoMove() {
+			const num = 16;
+			const wW = window.innerWidth; //浏览器页面内容的宽度
+			const wH = window.innerHeight;
+			let timer1; //初始化定时器
+			let timer2; //初始化定时器
+			let logos = []; //图标缓存池
+			init(); //初始化生产10个图标
+			timer1 = setInterval(move, 1000 / 30); //图标向上运动的动画，循环播放。
+			timer2 = setInterval(next, 1000); //检测每个图标是否超出了设置的区域，若超出则删除图标并新增一个图标。
+
+			// 不给每个dom绑定事件，要创建事件监听
+			document.body.addEventListener('click', function(e) {
+				if (e.target.className.toLowerCase() === "logo") {
+					leave.call(e.target, function() {
+						e.target.parentNode.removeChild(e.target);
+						logos.splice(logos.lastIndexOf(e.target), 1);
+					});
+				}
+			}, false)
+
+			// 点击后离开动画
+			function leave(cb) { // 被点击的图标是this   参数cb代表的是boom.call执行之后的回调函数
+				this.timer = setInterval(() => {
+					if (this.offsetWidth < 10) {
+						clearInterval(this.timer);
+						cb && cb()
+					}
+					this.speed++; //点击后动画速度自增
+					this.style.width = this.offsetWidth - 10 + "px"
+					this.style.height = this.offsetHeight - 10 + "px"
+				}, 1000 / 30)
+			}
+			//初始创建10个图标
+			function init() {
+				var fragment = document.createDocumentFragment(); //文档碎片
+				for (let i = 0; i < num; i++) {
+					let logo = document.createElement('div');
+					logo.className = 'logo'; //添加类名初始化样式
+					logo.style.top = ~~(Math.random() * (wH + 200)) + 160 + "px";
+					logo.style.right = ~~(Math.random() * (wW - 160)) + "px";
+					logo.style.background = 'url(../img/logo/more' + (i + 1) + '.png)  50px 50px no-repeat';
+					logo.style.backgroundSize = '35% 35%';
+					logo.speed = ~~Math.random() + 2;
+					logos.push(logo);
+					fragment.appendChild(logo); //如果直接往body里添加节点，浏览器每次都会重新渲染。
+				}
+				document.getElementById('main1').appendChild(fragment); //放入document
+			}
+			//让每个图标向上移动
+			function move() {
+				for (let i = 0, len = logos.length; i < len; i++) {
+					logos[i].style.top = logos[i].offsetTop - logos[i].speed + "px";
+				}
+			}
+			//在图标超出窗口后删除，并新建一个
+			function next() {
+				for (let i = 0, len = logos.length; i < len; i++) {
+					// console.log(aBalloons[i].style.top);
+					if (parseInt(logos[i].style.top) < -200) {
+						Newlogo(); //新建一个
+						// console.log("添加第"+i+"个气球");
+						logos[i].parentNode.removeChild(logos[i]);
+						logos.splice(logos.lastIndexOf(logos[i]), 1);
+					}
+					// if(aBalloons[i].style.top)
+				}
+			}
+			//新建图标
+			function Newlogo() {
+				let newlogo = document.createElement("div");
+				newlogo.className = 'logo'; //添加类名初始化样式
+				newlogo.style.top = ~~(Math.random() * (wH - 260)) + 600 + "px";
+				newlogo.style.right = ~~(Math.random() * (wW - 160)) + "px";
+				let newImg = ~~(Math.random() * 10) //在图片库中随机挑选要添加的图片
+				newlogo.style.background = 'url(../img/logo/more' + (newImg + 1) + '.png) 50px 50px no-repeat';
+				newlogo.style.backgroundSize = '35% 35%';
+				newlogo.speed = ~~Math.random() + 2;
+				logos.push(newlogo);
+				document.getElementById('main1').appendChild(newlogo);
+				console.log(logos.length)
+			}
+		}
+	}
+	Pjax_Main.init();
+	Pjax_Main.logoMove();
+</script>
