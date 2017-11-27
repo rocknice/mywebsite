@@ -419,7 +419,8 @@ margin: 40px 100px;*/
 }
 		.work_link1 img{
 	position: relative;
-	left:-90px;
+	top:40px;
+	left:0;
 }
 		.work_link2 img{
 	width: 200px;

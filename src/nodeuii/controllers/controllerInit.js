@@ -11,7 +11,6 @@ const controllerInit = {
 			_.get('/index/work/3d', indexController.work_3d());
 			_.get('/index/work/game2048', indexController.game2048());
 			_.get('/index/work/jdmall', indexController.jdmall());
-			_.get('/index/work/gallery', indexController.gallery());
 		}));
 	}
 };
